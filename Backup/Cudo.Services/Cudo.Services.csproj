@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30AEC879-88A7-475C-AFA8-5596EC3C6C2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cudo.Services</RootNamespace>
+    <AssemblyName>Cudo.Services</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminUserDAL.cs" />
+    <Compile Include="AdvertisingDAL.cs" />
+    <Compile Include="AreaDAL.cs" />
+    <Compile Include="CooperationDAL.cs" />
+    <Compile Include="FavoritesDAL.cs" />
+    <Compile Include="FeedBackDAL.cs" />
+    <Compile Include="JoinPromotionDAL.cs" />
+    <Compile Include="LinkDAL.cs" />
+    <Compile Include="MenuDAL.cs" />
+    <Compile Include="MessageDAL.cs" />
+    <Compile Include="NewsDAL.cs" />
+    <Compile Include="NewTypeDAL.cs" />
+    <Compile Include="OrderItemDAL.cs" />
+    <Compile Include="OrdersDAL.cs" />
+    <Compile Include="ProductsDAL.cs" />
+    <Compile Include="ProductTypeDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechargeorderDAL.cs" />
+    <Compile Include="ShopAreaDAL.cs" />
+    <Compile Include="ShopCommentDAL.cs" />
+    <Compile Include="ShopsDAL.cs" />
+    <Compile Include="ShopTypeDAL.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="SystemLogDAL.cs" />
+    <Compile Include="UserAddressDAL.cs" />
+    <Compile Include="UserGroupDAL.cs" />
+    <Compile Include="UserProfitDAL.cs" />
+    <Compile Include="UsersDAL.cs" />
+    <Compile Include="WebSetDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cudo.Common\Cudo.Common.csproj">
+      <Project>{A7ED3844-D92C-4CD8-A876-2C0FFFD1327A}</Project>
+      <Name>Cudo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cudo.Entities\Cudo.Entities.csproj">
+      <Project>{50A710AD-4729-479D-BBBE-20559A1730F8}</Project>
+      <Name>Cudo.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
