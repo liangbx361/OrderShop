@@ -14,11 +14,14 @@ namespace web
     {
         AreaBLL abll = new AreaBLL();
         ShopsBLL bll = new ShopsBLL();
+
         protected int TypeId = 0;
         protected string sortstr = "";
         protected int aid = 0; //地区
         protected int sid = 0; //街道
         protected int did = 0; //楼宇
+
+        // 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
             sortstr = base.GetStringValue("order", "hit");

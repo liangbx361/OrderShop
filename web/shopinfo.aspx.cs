@@ -44,6 +44,7 @@ namespace web
         {
             StringBuilder strResult = new StringBuilder();
             List<Product> list = new ProductsBLL().GetListByTypeAndShop(Convert.ToInt32(typeid),shopid);
+            // 显示图片
             if (see_pic == 1)
             {
                 strResult.Append("<ul class=\"cdlist\">");
@@ -61,7 +62,13 @@ namespace web
                 strResult.Append("<ul class=\"cdlist2\">");
                 foreach (Product pitem in list)
                 {
-                    strResult.Append("<li><span class=\"sl\">" + pitem.ProductName + "</span><span class=\"sr\"><span class=\"price\">￥" + pitem.Price + "</span><a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span></li>");
+                    strResult.Append("<li>");
+                    strResult.Append("<span class=\"sl\">" + pitem.ProductName + "</span>");
+                    strResult.Append("<span class=\"sr\">");
+                    strResult.Append("<S class=\"price\">￥" + pitem.Price + "</S>");
+                    strResult.Append("<span class=\"price2\">￥" + pitem.Price2 + "</span>");
+                    strResult.Append("<a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span>");
+                    strResult.Append("</li>");
                 }
                 strResult.Append("</ul>");
             }

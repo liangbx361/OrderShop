@@ -35,7 +35,12 @@ namespace web
 
         private void PageInit()
         {
-            AreaName = abll.GetAreaName(did);
+            if(aid == 0 && sid == 0 && did == 0) {
+                AreaName = string.Empty;
+            } else {
+                AreaName = abll.GetAreaName(aid) + " " + abll.GetAreaName(sid) + " " + abll.GetAreaName(did);
+            }
+            
 
             //加载店铺类别
             rpt_shoptypelist.DataSource = new ShopTypeBLL().GetList();
@@ -47,8 +52,8 @@ namespace web
                 list = new AreaBLL().GetListByidlist("1,2,3,4");
             else
                 list = new AreaBLL().GetListByidlist(aid.ToString());
-            rpt_streets.DataSource = list;
-            rpt_streets.DataBind();
+            //rpt_streets.DataSource = list;
+            //rpt_streets.DataBind();
 
             List<Area> list2 = new List<Area>();
             #region ===========加载小区============
@@ -86,8 +91,8 @@ namespace web
             }
             //list2 = abll.GetListByidlist(prestr);
 
-            rpt_district.DataSource = list2;
-            rpt_district.DataBind();
+            //rpt_district.DataSource = list2;
+            //rpt_district.DataBind();
 
             #endregion
 
@@ -101,6 +106,7 @@ namespace web
         private void shopinit()
         {
             PagedDataSource pdsdata = new PagedDataSource();
+            // 获取数据
             DataSet ds = bll.GetListByAreaId(aid);
             if (sid > 0)
                 ds = bll.GetListByStreetId(sid);

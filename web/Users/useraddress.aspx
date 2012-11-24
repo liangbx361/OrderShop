@@ -71,7 +71,7 @@
     <asp:Repeater ID="rpt_list" runat="server" OnItemCommand="rpt_list_ItemCommand"><ItemTemplate>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px solid #e7e7e7">
       <tr>
-        <td width="12%" align="center"><asp:HiddenField ID="hfaddtype" runat="server" Value='<%#SubAddressStr(Eval("Address").ToString()) %>' /> <%#AddressType(Eval("Address").ToString().Split('|')[2])%></td>
+        <td width="12%" align="center"><asp:HiddenField ID="hfaddtype" runat="server" Value='<%#SubAddressStr(Eval("Address").ToString()) %>' /> <%#AddressType(Eval("Address").ToString().Split('|')[1])%></td>
         <td width="12%" align="center"><%#Eval("UserName") %></td>
         <td width="40%" style="line-height:20px;padding:10px 0"><%#Eval("Address").ToString().Split('|')[1]%><%#Eval("IsDefault").Equals(1)?"[<span class=\"isdefault\">Ä¬ÈÏµØÖ·</span>]":"" %></td>
         <td width="12%" align="center"><%#Eval("Mobile") %></td>

@@ -27,12 +27,17 @@ namespace web
             List<UserAddress> list = bll.GetList(item.Id);
             for (int i = 0; i < list.Count; i++)
             {
-                ddladdress.Items.Add(new ListItem(AddressType(list[i].Address.Split('|')[2]),list[i].Id.ToString()));
+                ddladdress.Items.Add(new ListItem(AddressType(list[i].Address.Split('|')[1]),list[i].Id.ToString()));
             }
             L_UserName.Text = list[0].UserName;
             L_UserTel.Text = list[0].Mobile;
-            L_Area.Text = list[0].Address.Split('|')[1].Substring(0, 3);
-            L_Address.Text = list[0].Address.Split('|')[1].Substring(3, list[0].Address.Split('|')[1].Length - 3);
+            string[] str = list[0].Address.Split('|');
+            if (list[0].Address.Split('|')[1] != string.Empty)
+            {
+                L_Area.Text = list[0].Address.Split('|')[1].Substring(0, 3);
+                L_Address.Text = list[0].Address.Split('|')[1].Substring(3, list[0].Address.Split('|')[1].Length - 3);
+            }
+            
         }
 
         private string AddressType(string addtype)
@@ -49,9 +54,10 @@ namespace web
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
-        {
+        {   
             if (Session["cudoUser"] == null)
-            {
+            {   
+                //如果没有用户信息, 跳转到登录界面
                 Response.Redirect("login.aspx");
             }
             else
@@ -69,6 +75,7 @@ namespace web
                 Session["cudoUser"] = uinfo;
                 new UsersBLL().UpdateUser(uinfo);
                 string[] addlist = item.Address.Split('|')[0].Split(',');
+                //跳转到商店列表界面
                 Response.Redirect("shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
 
             }

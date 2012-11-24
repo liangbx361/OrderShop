@@ -49,7 +49,8 @@
                             <div style="font-size:15px; font-weight:bold;height:40px;">107饭网只接受当天的预定</div>
                             <div style="font-size:13px; line-height:22px;">
                                 <strong style="font-size:14px;">天气状况</strong><br />
-                                商家送餐服务可能因恶劣天气、<br />                                不可抗力等原因而中断或延时。
+                                商家送餐服务可能因恶劣天气、<br />
+                                不可抗力等原因而中断或延时。
                             </div>
                         </td>
                     </tr>

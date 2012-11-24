@@ -111,6 +111,15 @@
 .cdlist2 .sl{float:left;}
 .cdlist2 .sr{float:right; padding-right:15px;}
 .cdlist2 .price{padding-right:20px;}
+.cdlist2 .price2{padding-right:20px; color:#cc0000}
+
+.cdlist3{}    
+.cdlist3 li{float:left;width:350px;height:30px; line-height:30px;border-bottom:1px dashed #d6d3d3;}
+.cdlist3 li a{color:#cc0000;font-weight:bold}
+.cdlist3 .sl{float:left;}
+.cdlist3 .sr{float:right; padding-right:15px;}
+.cdlist3 .price3{padding-right:20px;}
+.cdlist3 .price32{padding-right:20px; color:#cc0000}
 
 
 .ca{ text-align:center;font-size:14px;font-weight:bold;height:25px;line-height:25px;border-bottom:1px dashed #d6d3d3}

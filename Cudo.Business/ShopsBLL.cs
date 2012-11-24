@@ -13,6 +13,12 @@ namespace Cudo.Business
             return ShopsDAL.GetListByAreaId(areaid, "area");
         }
 
+        //根据区域进行排序搜索
+        public DataSet GetListByAreaIdSort(int areaid, string sortType)
+        {
+            return ShopsDAL.GetListByAreaIdSort(areaid, sortType);
+        }
+
         public DataSet GetListByStreetId(int streetid)
         {
             return ShopsDAL.GetListByAreaId(streetid, "street");
@@ -22,6 +28,8 @@ namespace Cudo.Business
         {
             return ShopsDAL.GetListByAreaId(districtid, "district");
         }
+
+        
 
         /// <summary>
         /// 获取集合

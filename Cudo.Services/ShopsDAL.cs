@@ -73,6 +73,17 @@ namespace Cudo.Services
             return SqlHelper.ExecuteDataset(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues);
         }
 
+        public static DataSet GetListByAreaIdSort(int areaid, string sortType)
+        {
+            string spName = "cudo_getshoplistbyareaid_order";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@areaid",areaid),
+                new SqlParameter("@order_rowname",sortType)
+            };
+            return SqlHelper.ExecuteDataset(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues);
+        }
+
         public static DataSet GetListByKeyword(string keyword)
         {
             string spName = "cudo_getshoplistbykeyword";

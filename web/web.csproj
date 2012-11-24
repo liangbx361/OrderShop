@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>web</RootNamespace>
     <AssemblyName>web</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -51,7 +51,6 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
@@ -369,10 +368,90 @@
     <Content Include="common\jquery.js" />
     <Content Include="common\MSClass.js" />
     <Content Include="common\nomessage.jpg" />
+    <Content Include="images\logo.png" />
     <Content Include="js\jquery.js" />
-    <Content Include="Web.config" />
+    <Content Include="upload\adlink\ad1.jpg" />
+    <Content Include="upload\adlink\ad2.jpg" />
+    <Content Include="upload\adlink\ad3.jpg" />
+    <Content Include="upload\images\2012083109543516.jpg" />
+    <Content Include="upload\images\2012090419162345.jpg" />
+    <Content Include="upload\images\2012091411535282.jpg" />
+    <Content Include="upload\images\2012091412110599.jpg" />
+    <Content Include="upload\images\2012091418513031.jpg" />
+    <Content Include="upload\images\2012091418592692.jpg" />
+    <Content Include="upload\images\2012091419021857.jpg" />
+    <Content Include="upload\images\2012091419032685.jpg" />
+    <Content Include="upload\images\2012091612303053.jpg" />
+    <Content Include="upload\images\2012091612315743.jpg" />
+    <Content Include="upload\images\2012091612343059.jpg" />
+    <Content Include="upload\images\2012091709560880.jpg" />
+    <Content Include="upload\images\2012092023205719.jpg" />
+    <Content Include="upload\images\2012092109222753.jpg" />
+    <Content Include="upload\images\2012092109491666.jpg" />
+    <Content Include="upload\images\2012092209244866.jpg" />
+    <Content Include="upload\images\2012092209260092.jpg" />
+    <Content Include="upload\images\2012092215223174.jpg" />
+    <Content Include="upload\images\2012092216051693.jpg" />
+    <Content Include="upload\images\2012092409420445.jpg" />
+    <Content Include="upload\images\2012092419172553.jpg" />
+    <Content Include="upload\images\2012092419322288.jpg" />
+    <Content Include="upload\images\2012092419571419.jpg" />
+    <Content Include="upload\images\2012092710022745.jpg" />
+    <Content Include="upload\images\2012092710023442.jpg" />
+    <Content Include="upload\images\2012092710033099.jpg" />
+    <Content Include="upload\images\2012092710164895.jpg" />
+    <Content Include="upload\images\2012092710171844.jpg" />
+    <Content Include="upload\images\2012092710182552.jpg" />
+    <Content Include="upload\images\2012092710554083.jpg" />
+    <Content Include="upload\images\2012092719532470.jpg" />
+    <Content Include="upload\images\2012092719561386.jpg" />
+    <Content Include="upload\images\2012092719585416.jpg" />
+    <Content Include="upload\images\2012092720013176.jpg" />
+    <Content Include="upload\images\2012092720041962.jpg" />
+    <Content Include="upload\images\2012092817010578.png" />
+    <Content Include="upload\images\2012092915423339.jpg" />
+    <Content Include="upload\images\2012092915523745.jpg" />
+    <Content Include="upload\images\2012101217250234.bmp" />
+    <Content Include="upload\images\2012101516032195.bmp" />
+    <Content Include="upload\images\2012101516530950.jpg" />
+    <Content Include="upload\images\2012101517031974.jpg" />
+    <Content Include="upload\images\2012101517091980.bmp" />
+    <Content Include="upload\images\2012101517275768.bmp" />
+    <Content Include="upload\images\2012101517303110.bmp" />
+    <Content Include="upload\images\2012101517385759.bmp" />
+    <Content Include="upload\images\2012101810581825.jpg" />
+    <Content Include="upload\images\2012101811181475.jpg" />
+    <Content Include="upload\images\2012101811244111.jpg" />
+    <Content Include="upload\images\2012101811290342.jpg" />
+    <Content Include="upload\images\2012101815393810.jpg" />
+    <Content Include="upload\images\2012101815444725.jpg" />
+    <Content Include="upload\images\2012101815454038.jpg" />
+    <Content Include="upload\images\2012101816024283.jpg" />
+    <Content Include="upload\images\2012101816041460.jpg" />
+    <Content Include="upload\images\2012101816053090.jpg" />
+    <Content Include="upload\images\2012101816065314.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebService\JsonHelp.cs" />
+    <Compile Include="WebService\LoginCheck.asmx.cs">
+      <DependentUpon>LoginCheck.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\ShopInfo.asmx.cs">
+      <DependentUpon>ShopInfo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\ShopList.asmx.cs">
+      <DependentUpon>ShopList.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\UserAccount.asmx.cs">
+      <DependentUpon>UserAccount.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Content Include="ascx\Footer.ascx" />
     <Content Include="error.html" />
     <Content Include="VerifyCode.aspx" />
@@ -1177,7 +1256,6 @@
     <Content Include="images\loadingAnimation.gif" />
     <Content Include="images\login.gif" />
     <Content Include="images\new-btn-fixed.png" />
-    <Content Include="images\orders.jpg" />
     <Content Include="images\scbtns.png" />
     <Content Include="images\shop_add_sel.jpg" />
     <Content Include="images\standard_msg_error.gif" />
@@ -1826,6 +1904,10 @@
     <Content Include="Users\userinfo.aspx" />
     <Content Include="Users\userprofitlist.aspx" />
     <Content Include="user_agreement.aspx" />
+    <Content Include="WebService\LoginCheck.asmx" />
+    <Content Include="WebService\ShopInfo.asmx" />
+    <Content Include="WebService\ShopList.asmx" />
+    <Content Include="WebService\UserAccount.asmx" />
     <Content Include="XmlConfig\urls.config" />
     <Content Include="XmlConfig\WebSet.config" />
   </ItemGroup>
@@ -1851,7 +1933,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\Refactor\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="upload\adlink\" />
     <Folder Include="upload\link\" />
     <Folder Include="userfiles\" />
   </ItemGroup>

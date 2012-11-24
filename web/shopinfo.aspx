@@ -107,7 +107,8 @@
 <asp:Repeater ID="rpt_tyleprolist" runat="server" EnableViewState="false"><ItemTemplate>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:10px;">
 <tr>
-<td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">&nbsp;>&nbsp;<%#Eval("TypeName") %></td>
+<td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">&nbsp;>&nbsp;<%#Eval("TypeName") %>
+</td>
 </tr>
   <tr>
     <td>

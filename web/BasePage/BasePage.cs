@@ -56,11 +56,16 @@ namespace web
         }
 
         #region 表单处理
+        /// <summary>
+        /// 查询字符是否存在
+        /// </summary>
+        /// <param name="requestName"></param>
+        /// <returns></returns>
         public int GetIntValue(string requestName)
         {
             int requestValue = 0;
             if (Request.QueryString[requestName] != null)
-            {
+            {   
                 try
                 {
                     requestValue = Convert.ToInt32(Request.QueryString[requestName]);

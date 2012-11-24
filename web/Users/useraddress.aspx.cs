@@ -119,7 +119,7 @@ namespace web.Users
 
         protected string SubAddressStr(string address)
         {
-            return address.Split('|')[2];
+            return address.Split('|')[1];
         }
 
         protected void ddl_counties_SelectedIndexChanged(object sender, EventArgs e)
