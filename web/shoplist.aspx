@@ -85,15 +85,17 @@
                     <td width="100" align="center">
                         您的送餐地址：
                     </td>
-                    <td id="ps3" align="left">
+                    <td id="ps3">
                         <%if (AreaName != string.Empty)
                           { %><div>
-                              <span><%=AreaName%></span>  
-                              <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                              <span><a href="/setaddress.aspx">更改送餐地址</a></span>                                                          
-                              </div>
-                              
+                              <span><%=AreaName%></span>                                                                                       
+                              </div>                              
                         <%} %>
+                    </td>
+                    <td>
+                        <div align="right">
+                            <span><a href="/setaddress.aspx"><img src="/images/ggdzbut.gif"></img></a></span>   
+                        </div>
                     </td>
                 </tr>
             </table>

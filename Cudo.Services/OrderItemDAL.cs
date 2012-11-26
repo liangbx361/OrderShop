@@ -91,5 +91,15 @@ namespace Cudo.Services
             };
             return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues));
         }
+
+        public static string GetRemark(string orderno)
+        {
+            string spName = "cudo_getorderremark";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@orderno",orderno)
+            };
+            return Convert.ToString(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues));
+        }
     }
 }

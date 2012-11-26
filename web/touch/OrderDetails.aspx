@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <div align=center><h2>送餐时间:<%=remark%></h2></div>
     <div style="padding:6px 0;">
     <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#e8e8e8">
       <tr style="font-weight:bold; ">

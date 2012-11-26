@@ -36,5 +36,10 @@ namespace Cudo.Business
         {
             return OrderItemDAL.GetCount(orderno);
         }
+
+        public string GetRemark(string orderno)
+        {
+            return OrderItemDAL.GetRemark(orderno);
+        }
     }
 }

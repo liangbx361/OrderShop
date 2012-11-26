@@ -43,7 +43,17 @@ namespace web
                     {
                         Utils.WriteCookie("UserName", webset.CookieName, DESEncrypt.Encrypt(_username));
                     }
-                    Response.Redirect("index.aspx");
+
+                    string[] addlist = item.Address.Split('|')[0].Split(',');
+                    try
+                    {
+                        int aid = Convert.ToInt32(addlist[0]);
+                        Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                    }
+                    catch (FormatException ee)
+                    {
+                        Response.Redirect("/setaddress.aspx");
+                    }
                 }
                 else
                 {
