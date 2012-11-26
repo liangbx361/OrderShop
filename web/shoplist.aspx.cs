@@ -35,6 +35,11 @@ namespace web
 
         private void PageInit()
         {
+            rpt_adverts.DataSource = new AdvertBLL().GetAdvertList(1);
+            rpt_adverts.DataBind();
+            rpt_advertnum.DataSource = rpt_adverts.DataSource;
+            rpt_advertnum.DataBind();
+
             if(aid == 0 && sid == 0 && did == 0) {
                 AreaName = string.Empty;
             } else {

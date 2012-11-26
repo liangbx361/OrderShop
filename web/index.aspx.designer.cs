@@ -10,7 +10,7 @@
 namespace web {
     
     
-    public partial class about {
+    public partial class index {
         
         /// <summary>
         /// form1 控件。
@@ -22,30 +22,12 @@ namespace web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Header 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::web.Header Header;
-        
-        /// <summary>
-        /// rpt_list 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_list;
-        
-        /// <summary>
-        /// Footer 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::web.Footer Footer;
+        protected global::System.Web.UI.WebControls.LinkButton btnSubmit;
     }
 }

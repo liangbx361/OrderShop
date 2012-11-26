@@ -43,7 +43,7 @@ namespace web
                     {
                         Utils.WriteCookie("UserName", webset.CookieName, DESEncrypt.Encrypt(_username));
                     }
-                    Response.Redirect("/");
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {

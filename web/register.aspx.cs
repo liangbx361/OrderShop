@@ -73,7 +73,7 @@ namespace web
                 {
                     UserInfo item2 = bll.GetUserByID(UserID);
                     Session["cudoUser"] = item2;
-                    Response.Redirect("/");
+                    Response.Redirect("/index.aspx");
                 }
                 else
                 {

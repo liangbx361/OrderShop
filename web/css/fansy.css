@@ -1,0 +1,33 @@
+@charset "utf-8";
+body{ padding:0px; margin:0 auto; font-size:12px; color:#000; font-family:Arial, Helvetica, sans-serif; }
+*{margin:0; padding:0px;}
+ul,li,dl,dt,dd{list-style:none;}
+input,select,img{vertical-align:middle;}
+img{border:none;}
+a{color:#000; text-decoration:none;}
+a:hover{color:#F00; text-decoration:underline;}
+a:focus{ outline-style:none;}
+a{blr:expression(this.onFocus=this.blur());}/*ie6*/
+
+#header,#main,#footer{ padding:0px; margin:0 auto; text-align:left; overflow:hidden; width:1000px; background-color:#FFF;}
+
+#header{}
+.fansy_top{ background:url(../images/fansy_topdbj.jpg) left top repeat-x; width:1000px; height:64px;}
+.fansy_toptab{ color:#af0005; line-height:20px;}
+.fansy_toptab a{color:#af0005; font-family:"Microsoft YaHei"; text-decoration:none;}
+.fansy_toptab a:hover{color:#af0005; font-family:"Microsoft YaHei"; text-decoration:underline;}
+.fansy_baner{ width:1000px; height:29px; background:url(../images/fansy_baner_bj.gif) left top repeat-x;}
+.fansy_baner_lxx{ width:480px; height:29px; line-height:29px; color:#feb83f; padding-left:20px; float:left; display:inline;}
+.fansy_baner_lxx a{color:#feb83f; text-decoration:none;}
+.fansy_baner_lxx a:hover{color:#feb83f; text-decoration:underline;}
+.fansy_baner_rxx{ width:200px; height:29px; line-height:29px; color:#feb83f; text-align:center; float:right; display:inline; font-weight:bold;  font-family:"Microsoft YaHei";}
+.fansy_baner_rxx a{color:#feb83f; text-decoration:none;}
+.fansy_baner_rxx a:hover{color:#feb83f; text-decoration:underline;}
+
+.fansy_midnr{ width:1000px; height:526px;}
+.fansy_midnr_lnr{ width:353px; height:526px; background:url(../images/fansy_lnr_dbj.jpg) left top no-repeat; float:left; display:inline;}
+.fansy_midnr_rnr{ width:647px; height:526px; float:right; display:inline;}
+
+.fansy_fotnr{ width:1000px; height:28px; line-height:28px; background:url(../images/fansy_foot_bj.gif) left top repeat-x; color:#FFF;}
+.fansy_fotnr a{color:#ffffff; text-decoration:none;}
+.fansy_fotnr a:hover{color:#ffffff; text-decoration:underline;}

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ascx\HeaderTest.ascx" />
     <Content Include="common\admin_upfiles.js" />
     <Content Include="common\Common.js" />
     <Content Include="common\Date\calendar.js" />
@@ -368,8 +369,34 @@
     <Content Include="common\jquery.js" />
     <Content Include="common\MSClass.js" />
     <Content Include="common\nomessage.jpg" />
+    <Content Include="css\fansy.css" />
+    <Content Include="images\clear.gif" />
+    <Content Include="images\coins.gif" />
+    <Content Include="images\coins.png" />
+    <Content Include="images\fansy_baner_bj.gif" />
+    <Content Include="images\fansy_foot_bj.gif" />
+    <Content Include="images\fansy_lnr_dbj.jpg" />
+    <Content Include="images\fansy_lnr_dcbut.gif" />
+    <Content Include="images\fansy_lnr_dcbutonc.gif" />
+    <Content Include="images\fansy_rnr_tu1.jpg" />
+    <Content Include="images\fansy_topdbj.jpg" />
+    <Content Include="images\fansy_toplogo.jpg" />
+    <Content Include="images\fansy_toprx.jpg" />
+    <Content Include="images\fansy_top_bzzxbut.jpg" />
+    <Content Include="images\fansy_top_bzzxbutonc.jpg" />
+    <Content Include="images\fansy_top_xzdcbut.jpg" />
+    <Content Include="images\fansy_top_xzdcbutonc.jpg" />
+    <Content Include="images\house.gif" />
+    <Content Include="images\house.png" />
+    <Content Include="images\house2.gif" />
+    <Content Include="images\house2.png" />
+    <Content Include="images\house3.png" />
     <Content Include="images\logo.png" />
+    <Content Include="index.aspx" />
+    <Content Include="index.html" />
+    <Content Include="js\fansy.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\unitpngfix.js" />
     <Content Include="upload\adlink\ad1.jpg" />
     <Content Include="upload\adlink\ad2.jpg" />
     <Content Include="upload\adlink\ad3.jpg" />
@@ -435,6 +462,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ascx\HeaderTest.ascx.cs">
+      <DependentUpon>HeaderTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\HeaderTest.ascx.designer.cs">
+      <DependentUpon>HeaderTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebService\JsonHelp.cs" />
     <Compile Include="WebService\LoginCheck.asmx.cs">
       <DependentUpon>LoginCheck.asmx</DependentUpon>

@@ -5,16 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace web
+namespace web.ascx
 {
-    public partial class logout : System.Web.UI.Page
+    public partial class HeaderTest : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove("cudoUser");
-            Session.Remove("ShoppingCart");
-            Session.Remove("areaid");
-            Response.Redirect("/index.aspx");
+
         }
     }
 }

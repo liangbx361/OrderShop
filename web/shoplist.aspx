@@ -11,6 +11,9 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/userfavorite.js" type="text/javascript"></script>
+    <script src="js/jquery.pack.js" type="text/javascript"></script>
+    <script src="js/jQuery.blockUI.js" type="text/javascript"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
     <style type="text/css">
         #menu #menu1 a
         {
@@ -18,6 +21,14 @@
             font-weight: bold;
             color: #FFF;
         }
+        .banner{ margin-top:5px;text-align:center;}
+        .slideBox{ width:996px; height:130px; overflow:hidden; margin:0 auto; position:relative;}  
+        .slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:10px; bottom:10px; z-index:1; }  
+        .slideBox .hd ul{ overflow:hidden; zoom:1; float:left;}  
+        .slideBox .hd ul li{ float:left; margin-right:5px; width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }  
+        .slideBox .hd ul li.on{ background:#f00; color:#fff;}  
+        .slideBox .bd{ position:relative; height:100%; z-index:0;}  
+        .slideBox .bd img{ width:996px; height:130px; } 
     </style>
     <script type="text/javascript">
         $(function () {
@@ -38,16 +49,41 @@
     <form id="form1" runat="server">
     <input type="hidden" id="hiddenaid" runat="server" value="0" />
     <input type="hidden" id="hiddensid" runat="server" value="0" />
-    <ucl:Header ID="Header" runat="server" />
+    <ucl:HeaderTest ID="Header" runat="server" />
+    <div class="banner">
+        <div id="slideBox" class="slideBox">
+            <div class="hd">
+                <ul>
+                    <asp:Repeater ID="rpt_advertnum" runat="server" EnableViewState="false">
+                        <ItemTemplate>
+                            <li>
+                                <%#Container.ItemIndex+1 %></li></ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <asp:Repeater ID="rpt_adverts" runat="server" EnableViewState="false">
+                        <ItemTemplate>
+                            <li>
+                                <a href="<%#Eval("AdvertLink") %>">
+                                    <img src="<%#Eval("AdvertPic") %>" /></a></li></ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">            jQuery(".slideBox").slide({ mainCell: ".bd ul", effect: "leftLoop", autoPlay: true });</script>
+    </div>
     <div id="main">
-        <div style="position: relative; height: 35px;">
+        <div style="height: 10px;"></div>
+        <div style="position: relative; height: 38px; top: 0px; left: 0px; background: url(images/yncf_40.gif)">
             <table id="ps2" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="55">
+                    <td width="188">
                         &nbsp;
                     </td>
-                    <td width="30" align="left">
-                        您的送餐地址：
+                    <td width="74">
+                        您已选择：
                     </td>
                     <td width="198" id="ps3">
                         <%if (AreaName != string.Empty)
@@ -57,22 +93,26 @@
                                       src="images/yncf_39.gif" /></a></span></div>
                         <%} %>
                     </td>
+                    <td>
+                        <a href="/setaddress.aspx">更改送餐地址</a>
+                    </td>
                 </tr>
             </table>
         </div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
             <tr>
                 <td>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" height="26" style="margin-top: 10px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" height="0" style="margin-top: 10px;">
                         <tr>
-                            <table height="26" border="0" cellspacing="0" cellpadding="0" 
-                        background="images/yncf_12.gif" style="width: 126%">
+                            <table height="26" border="0" cellspacing="0" cellpadding="0" background="images/yncf_12.gif"
+                                style="width: 126%">
                                 <tr>
                                     <td width="30" colspan="2" style="font-weight: bold; color: #FFFF; padding-left: 20px">
                                         所有餐店(<%=WebPager.RecordCount %>)
                                     </td>
                                     <td width="70%" align="right">
-                                        &nbsp;</td>
+                                        &nbsp;
+                                    </td>
                                 </tr>
                             </table>
                         </tr>
@@ -122,10 +162,10 @@
                                                                     <%#Eval("ShopName") %></a>
                                                             </td>
                                                             <td width="34%">
-                                                                <span class="bdms_03">
-                                                                    <a href="shoporderlist.aspx?shopid=<%#Eval("id") %>" target="_blank">近期订单(<span><%#Eval("ShopOrder")%></span>)</a></span><span
-                                                                        class="bdms_05"><a href="shopcommentlist.aspx?shopid=<%#Eval("id") %>" target="_blank">餐厅点评(<span><%#Eval("ShopComment") %></span>)</a></span><span
-                                                                            class="bdms_04"><a href="javascript:;" onclick="favoriteshop(<%#Eval("id") %>)">收藏</a></span>
+                                                                <span class="bdms_03"><a href="shoporderlist.aspx?shopid=<%#Eval("id") %>" target="_blank">
+                                                                    近期订单(<span><%#Eval("ShopOrder")%></span>)</a></span><span class="bdms_05"><a href="shopcommentlist.aspx?shopid=<%#Eval("id") %>"
+                                                                        target="_blank">餐厅点评(<span><%#Eval("ShopComment") %></span>)</a></span><span class="bdms_04"><a
+                                                                            href="javascript:;" onclick="favoriteshop(<%#Eval("id") %>)">收藏</a></span>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -139,8 +179,7 @@
                                                                 <span class="bdms_15" style="float: left; padding-right: 10px;">
                                                                     <div class="star<%#Eval("AvgPoint") %>">
                                                                     </div>
-                                                                </span>
-                                                                <span class="bdms_07">口味：<span><%#Eval("AvgTastePoint")%></span>环境：<span><%#Eval("AvgMilieuPoint")%></span>服务：<span><%#Eval("AvgServicePoint")%></span></span>
+                                                                </span><span class="bdms_07">口味：<span><%#Eval("AvgTastePoint")%></span>环境：<span><%#Eval("AvgMilieuPoint")%></span>服务：<span><%#Eval("AvgServicePoint")%></span></span>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -163,10 +202,8 @@
                                                     </table>
                                                 </td>
                                                 <td width="16%">
-                                                    <span class="bdms_14">
-                                                        <a href="shopinfo.aspx?shopid=<%#Eval("id") %>" target="_blank">
-                                                            <img src="images/yncf_45.gif" width="134" height="37" /></a></span>
-                                                </td>
+                                                    <span class="bdms_14"><a href="shopinfo.aspx?shopid=<%#Eval("id") %>" target="_blank">
+                                                        <img src="images/yncf_45.gif" width="134" height="37" /></a></span>
                                             </tr>
                                         </table>
                                     </ItemTemplate>
