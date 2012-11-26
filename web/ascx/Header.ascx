@@ -1,82 +1,89 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="web.Header" %>
 <%@ Import Namespace="Cudo.Entities" %>
-<script type="text/javascript">
-    function search() {
-        var keywords = document.getElementById("searchkeyword");
-        if (keywords.value == "" || keywords.value == "请输入您所在的小区/楼宇") {
-            alert("请输入您所在的小区/楼宇");
-            keywords.focus();
-            return;
-        }
-        window.location.href = "search.aspx?keyword=" + escape(keywords.value.replace(/\s+/g,""));
-    } 
-</script>
-<div id="function">
-<table border="0" cellspacing="0" cellpadding="0" height="31" class="wrad"  id="rotdot">
-  <tr>
-    <td width="144">您好，欢迎来邀您吃饭！</td>
-    <%if (Session["cudoUser"] == null){ %>
-    <td width="52"><a href="/login.aspx" class="color0">[登录]</a></td>
-    <td width="66"><a href="/register.aspx" class="color0">[免费注册]</a></td>
-    <td width="571">&nbsp;</td>
-    <%}else{
-          UserInfo item = Session["cudoUser"] as UserInfo;
-          %>
-    <td width="689">
-        <span id="userinfo">
-        <%=item.UserName %>&nbsp;<a href="<%=item.Utype == 1 ? "/Shops/shoporderlist.aspx" : "/Users/"%>" class="color0">[个人中心]</a>&nbsp<a href="/logout.aspx" class="color0">[退出]</a>
-        </span>
-    </td>
-    <%} %>
-    <td width="20" valign="top" style="padding-top:7px;"><img src="/images/yncf_02.gif" width="14" height="12" /></td>
-    <td width="60"><a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.107fan.com');">设为首页</a></td>
-    <td width="20" valign="top" style="padding-top:7px;"><img src="/images/yncf_03.gif" width="12" height="12" /></td>
-    <td width="67"><a href="javascript:;" onclick="window.external.AddFavorite('http://www.107fan.com','邀您吃饭网')">加入收藏</a></td>
-    <td width="20" valign="top" style="padding-top:7px;"><img src="/images/jb.png" width="16" height="16" /></td>
-    <td width="67"><a href="/Users/onlinerecharge.aspx">积分充值</a></td>
-  </tr>
-</table>
-</div>
-<div id="header">
-<table class="wrad" height="95" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="209" align="center"><a href="/"><img src="/images/logo.png" width="180" height="90" /></a></td>
-    <td width="10" align="center"><img src="/images/yncf_04.gif" width="1" height="70" /></td>
-    <td width="85" align="center">
-        &nbsp;
-    </td>
-    <td width="505" valign="bottom">
-<div id="menu">
-<li id="menu0" class="cur0"><a href="/">首 页</a></li>
-<li id="menu1" class="cur0"><a href="/setaddress.aspx">现在订餐</a></li>
-<li id="menu2" class="cur0"><a href="#">论坛</a></li>
-<li id="menu3" class="cur0"><a href="/help.aspx">帮助中心</a></li>
- </div>
-</td>
-    <td width="191" align="center"><img src="/images/yncf_06.jpg" width="174" height="40" /></td>
-  </tr>
-</table>
+    <script src="/js/fansy.js"></script>
+    <link style="/text/css" rel="stylesheet" href="/css/fansy.css" />
 
-</div>
-<div id="search">
-<table  class="wrad" border="0" cellspacing="0" cellpadding="0" height="40">
-  <tr>
-    <td class="stn">热门楼宇：
-    <asp:Literal ID="L_HotDistrict" runat="server" EnableViewState="false"></asp:Literal>
-</td>
-    <td width="339" align="center"><table width="310" height="29" background="/images/yncf_10.gif" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="29">&nbsp;</td>
-    <td width="204">
-        <div style="position:relative"><input type="text" id="searchkeyword" name="searchkeyword" onkeyup="searchbykey(this.value)" value="请输入您所在的小区/楼宇" style="border:0;width:190px;color:#CCC" />
-        <div id="searchlist" class="searchlist" style="display:none;">
+    <script language="javascript">
+        //107吃饭首页 帮助中心 按钮切换
+        function fansy_bzzx_onm(fansy_bzzx_obj) {
+            fansy_bzzx_obj.src = "/images/fansy_top_bzzxbutonc.jpg";
+        }
+        function fansy_bzzx_out(fansy_bzzx_obj) {
+            fansy_bzzx_obj.src = "/images/fansy_top_bzzxbut.jpg";
+        }
+    </script>
+
+<div id="header">
+    <div class="fansy_top">
+        <table width="1000" height="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="140" height="64" align="center">
+                    <img src="/images/fansy_toplogo.jpg" width="79" height="64" style="cursor: pointer;" />
+                </td>
+                <td width="370" align="center">
+                    <img src="/images/fansy_toprx.jpg" width="362" height="64" />
+                </td>
+                <td width="20">
+                    &nbsp;
+                </td>
+                <td width="200" align="center">
+                    <a href="help.aspx">
+                        <img src="/images/fansy_top_bzzxbut.jpg" width="96" height="30" onmouseover="fansy_bzzx_onm(this)"
+                            onmouseout="fansy_bzzx_out(this)" style="cursor: pointer;" />
+                    </a>
+                </td>
+                <td width="20">
+                    &nbsp;
+                </td>
+                <td width="250">
+                    <table width="240" class="fansy_toptab" height="20" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="20" align="center">
+                                <img src="/images/house2.png" width="18" height="18" style="margin-top: -2px;" />
+                            </td>
+                            <td width="60">
+                                <a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.107fan.com');">
+                                    设为首页</a>
+                            </td>
+                            <td width="20" align="center">
+                                <img src="/images/star.png" width="16" height="16" style="margin-top: -2px;" />
+                            </td>
+                            <td width="60">
+                                <a href="javascript:;" onclick="window.external.AddFavorite('http://www.107fan.com','邀您吃饭网')">
+                                    加入收藏</a>
+                            </td>
+                            <td width="20" align="center">
+                                <img src="/images/coins.png" width="16" height="16" style="margin-top: -2px;" />
+                            </td>
+                            <td width="60">
+                                <a href="/Users/onlinerecharge.aspx">积分充值</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="fansy_baner">
+        <div class="fansy_baner_lxx">
+            最新消息：<a href="###">东街口85度C新店开业！</a></div>
+        <div class="fansy_baner_rxx">
+            &nbsp;&nbsp;
+            <%if (Session["cudoUser"] == null)
+              { %>
+            <a href="/login.aspx">登录</a>
+            <a href="/register.aspx" style="margin-left: 30px;">免费注册</a>
+            <%}
+              else
+              {
+                  UserInfo item = Session["cudoUser"] as UserInfo;
+            %>
+            <span id="userinfo">
+                <%=item.UserName%>&nbsp;<a href="<%=item.Utype == 1 ? "/Shops/shoporderlist.aspx" : "/Users/" %>"
+                    class="color0">[个人中心]</a>&nbsp
+                <a href="/logout.aspx" class="color0">[退出]</a>
+            </span>
+            <%} %>
         </div>
-        </div>
-    </td>
-    <td width="77" align="center" class="btn"><a href="javascript:search();">去订餐</a></td>
-  </tr>
-</table>
-</td>
-  </tr>
-</table>
+    </div>
 </div>

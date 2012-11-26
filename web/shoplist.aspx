@@ -49,7 +49,7 @@
     <form id="form1" runat="server">
     <input type="hidden" id="hiddenaid" runat="server" value="0" />
     <input type="hidden" id="hiddensid" runat="server" value="0" />
-    <ucl:HeaderTest ID="Header" runat="server" />
+    <ucl:Header ID="Header" runat="server" />
     <div class="banner">
         <div id="slideBox" class="slideBox">
             <div class="hd">
@@ -82,24 +82,23 @@
                     <td width="188">
                         &nbsp;
                     </td>
-                    <td width="74">
-                        您已选择：
+                    <td width="100" align="center">
+                        您的送餐地址：
                     </td>
-                    <td width="198" id="ps3">
+                    <td id="ps3" align="left">
                         <%if (AreaName != string.Empty)
                           { %><div>
-                              <span>
-                                  <%=AreaName%></span><span><a href="javascript:;" onclick="javascript:self.location='shoplist.aspx'"><img
-                                      src="images/yncf_39.gif" /></a></span></div>
+                              <span><%=AreaName%></span>  
+                              <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                              <span><a href="/setaddress.aspx">更改送餐地址</a></span>                                                          
+                              </div>
+                              
                         <%} %>
-                    </td>
-                    <td>
-                        <a href="/setaddress.aspx">更改送餐地址</a>
                     </td>
                 </tr>
             </table>
         </div>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 0px;">
             <tr>
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" height="0" style="margin-top: 10px;">

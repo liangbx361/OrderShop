@@ -7,9 +7,9 @@ namespace Cudo.Business
 {
     public class FavoritesBLL
     {
-        public List<Favorites> GetList(int pageindex, int pagesize, int userid)
+        public List<Favorites> GetList(int pageindex, int pagesize, int userid, int typeid)
         {
-            return FavoritesDAL.GetList(pageindex, pagesize, userid);
+            return FavoritesDAL.GetList(pageindex, pagesize, userid, typeid);
         }
 
         public int AddItem(Favorites item)
@@ -22,9 +22,9 @@ namespace Cudo.Business
             return FavoritesDAL.DeleteItem(id);
         }
 
-        public int GetCount(int userid)
+        public int GetCount(int userid, int typeid)
         {
-            return FavoritesDAL.GetCount(userid);
+            return FavoritesDAL.GetCount(userid, typeid);
         }
     }
 }
