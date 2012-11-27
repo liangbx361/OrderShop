@@ -21,7 +21,7 @@ namespace web
                 if (!string.IsNullOrEmpty( _username))
                 {
                     username.Value = DESEncrypt.Decrypt(_username);
-                    chkusername.Checked = true;
+                    //chkusername.Checked = true;
                 }
             }
         }
@@ -39,10 +39,10 @@ namespace web
                 {
                     item = bll.UpdateUserGroup(item); 
                     Session["cudoUser"] = item;
-                    if (chkusername.Checked)
-                    {
-                        Utils.WriteCookie("UserName", webset.CookieName, DESEncrypt.Encrypt(_username));
-                    }
+                    //if (chkusername.Checked)
+                    //{
+                    //    Utils.WriteCookie("UserName", webset.CookieName, DESEncrypt.Encrypt(_username));
+                    //}
 
                     string[] addlist = item.Address.Split('|')[0].Split(',');
                     try

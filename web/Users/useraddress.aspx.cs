@@ -14,6 +14,7 @@ namespace web.Users
     {
         UserAddressBLL bll = new UserAddressBLL();
         AreaBLL abll = new AreaBLL();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             base.IsLogin();
@@ -27,7 +28,7 @@ namespace web.Users
         private void PageInit()
         {
             UserInfo item = Session["cudoUser"] as UserInfo;
-            rpt_list.DataSource = bll.GetList(item.Id);
+            rpt_list.DataSource = bll.GetList(item.Id); ;
             rpt_list.DataBind();
         }
 
@@ -159,7 +160,7 @@ namespace web.Users
                 else
                 {
                     bool flag = false;
-                    foreach(RepeaterItem temp in rpt_list.Items)
+                    foreach (RepeaterItem temp in rpt_list.Items)
                     {
                         HiddenField hf = temp.FindControl("hfaddtype") as HiddenField;
                         if (hf.Value == ddladdtype.Value)
@@ -214,6 +215,31 @@ namespace web.Users
                 }
             }
             PageInit();
+        }
+
+        protected void order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void order_command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "order")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                UserInfo item = Session["cudoUser"] as UserInfo;            
+                List<UserAddress> addressList = bll.GetList(item.Id);
+
+                foreach (UserAddress emement in addressList)
+                {
+                    if (emement.Id == id)
+                    {
+                        string[] addlist = emement.Address.Split('|')[0].Split(',');
+                        Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                    }
+                }
+
+            }
         }
     }
 }

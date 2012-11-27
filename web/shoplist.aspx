@@ -83,7 +83,7 @@
                         &nbsp;
                     </td>
                     <td width="100" align="center">
-                        您的送餐地址：
+                        您的收餐地址：
                     </td>
                     <td id="ps3">
                         <%if (AreaName != string.Empty)
@@ -94,7 +94,7 @@
                     </td>
                     <td>
                         <div align="right">
-                            <span><a href="/setaddress.aspx"><img src="/images/ggdzbut.gif"></img></a></span>   
+                            <span><a href="/Users/useraddress.aspx"><img alt="" src="/images/ggdzbut.gif"></img></a></span>   
                         </div>
                     </td>
                 </tr>

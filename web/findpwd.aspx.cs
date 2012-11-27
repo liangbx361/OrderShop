@@ -43,7 +43,7 @@ namespace web
                         }
                         else
                         {
-                            Utils.alert("未知错误!", "default.aspx");
+                            Utils.alert("未知错误!", "index.aspx");
                         }
                     }
                     else

@@ -77,8 +77,9 @@
         <td width="12%" align="center"><%#Eval("Mobile") %></td>
         <td width="27%" align="center">
             <asp:LinkButton ID="lbtndefualt" runat="server" CommandName="default" CommandArgument='<%#Eval("id") %>' CssClass="color0">设为默认</asp:LinkButton>
-            <asp:LinkButton ID="lbtnmodify" runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>' CssClass="color0">编辑</asp:LinkButton>
+            <asp:LinkButton ID="lbtnmodify" runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>' CssClass="color0">编辑</asp:LinkButton>            
             <asp:LinkButton ID="lbtnDel" CommandName="del" CommandArgument='<%#Eval("id") %>' runat="server" Visible='<%#Eval("IsDefault").Equals(1)?false:true %>' OnClientClick="return config('确定要删除吗?');" CssClass="color0">删除</asp:LinkButton>
+            <asp:LinkButton ID="lbtnorder" runat="server" CommandName="order" CommandArgument='<%#Eval("id") %>' oncommand="order_command" CssClass="color0">定餐</asp:LinkButton>
         </td>
       </tr>
     </table>

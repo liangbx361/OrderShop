@@ -127,7 +127,7 @@ namespace web.ashx
             string strResult = "";
             string prestr = "";
             List<Area> list = new List<Area>();
-            string strurl = "default.aspx";
+            string strurl = "index.aspx";
             if (ot == "2")
                 strurl = "shoplist.aspx";
             if (pid == "0")
