@@ -18,15 +18,7 @@ namespace web
 
         private void PageInit()
         {
-            ltl_copyright.Text = new BasePage().webset.WebCopyright;
 
-            NewsBLL bll = new NewsBLL();
-            rpt_about.DataSource = bll.GetTopNewList(3,10);
-            rpt_about.DataBind();
-            rpt_hz.DataSource = bll.GetTopNewList(2, 10);
-            rpt_hz.DataBind();
-            rpt_help.DataSource = bll.GetTopNewList(1, 10);
-            rpt_help.DataBind();
         }
     }
 }

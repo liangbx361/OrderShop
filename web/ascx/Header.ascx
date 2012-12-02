@@ -1,69 +1,59 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="web.Header" %>
 <%@ Import Namespace="Cudo.Entities" %>
-    <script src="/js/fansy.js"></script>
-    <link style="/text/css" rel="stylesheet" href="/css/fansy.css" />
 
-    <script language="javascript">
-        //107吃饭首页 帮助中心 按钮切换
-        function fansy_bzzx_onm(fansy_bzzx_obj) {
-            fansy_bzzx_obj.src = "/images/fansy_top_bzzxbutonc.jpg";
-        }
-        function fansy_bzzx_out(fansy_bzzx_obj) {
-            fansy_bzzx_obj.src = "/images/fansy_top_bzzxbut.jpg";
-        }
-    </script>
+<script type="text/javascript" src="/js/unitpngfix.js"></script><!--ie6 支持png透明 js-->
+
+<link style="text/css" rel="stylesheet" href="/css/fansy.css"/><!--107吃饭首页css-->
+<script src="js/fansy.js"></script><!--107吃饭首页 js-->
+
+<script language="javascript">
+    //107吃饭首页 现在订餐 按钮切换
+    function fansy_xzdc_onm(fansy_xzdc_obj) {
+        fansy_xzdc_obj.src = "/images/fansy_top_xzdcbutonc.jpg";
+    }
+    function fansy_xzdc_out(fansy_xzdc_obj) {
+        fansy_xzdc_obj.src = "/images/fansy_top_xzdcbut.jpg";
+    }
+
+    //107吃饭首页 帮助中心 按钮切换
+    function fansy_bzzx_onm(fansy_bzzx_obj) {
+        fansy_bzzx_obj.src = "/images/fansy_top_bzzxbutonc.jpg";
+    }
+    function fansy_bzzx_out(fansy_bzzx_obj) {
+        fansy_bzzx_obj.src = "/images/fansy_top_bzzxbut.jpg";
+    }
+</script>
 
 <div id="header">
     <div class="fansy_top">
-        <table width="1000" height="64" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-                <td width="140" height="64" align="center">
-                    <img src="/images/fansy_toplogo.jpg" width="79" height="64" style="cursor: pointer;" />
-                </td>
-                <td width="370" align="center">
-                    <img src="/images/fansy_toprx.jpg" width="362" height="64" />
-                </td>
-                <td width="20">
-                    &nbsp;
-                </td>
-                <td width="200" align="center">
-                    <a href="help.aspx">
-                        <img src="/images/fansy_top_bzzxbut.jpg" width="96" height="30" onmouseover="fansy_bzzx_onm(this)"
-                            onmouseout="fansy_bzzx_out(this)" style="cursor: pointer;" />
-                    </a>
-                </td>
-                <td width="20">
-                    &nbsp;
-                </td>
-                <td width="250">
-                    <table width="240" class="fansy_toptab" height="20" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td width="20" align="center">
-                                <img src="/images/house2.png" width="18" height="18" style="margin-top: -2px;" />
-                            </td>
-                            <td width="60">
-                                <a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.107fan.com');">
-                                    设为首页</a>
-                            </td>
-                            <td width="20" align="center">
-                                <img src="/images/star.png" width="16" height="16" style="margin-top: -2px;" />
-                            </td>
-                            <td width="60">
-                                <a href="javascript:;" onclick="window.external.AddFavorite('http://www.107fan.com','邀您吃饭网')">
-                                    加入收藏</a>
-                            </td>
-                            <td width="20" align="center">
-                                <img src="/images/coins.png" width="16" height="16" style="margin-top: -2px;" />
-                            </td>
-                            <td width="60">
-                                <a href="/Users/onlinerecharge.aspx">积分充值</a>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
+  	<table width="1000" height="64" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="260" height="64" align="center"><img src="/images/fansy_toplogo2.jpg" width="226" height="64" /></td>
+        <td width="250" align="center">&nbsp;</td>
+        <td width="20">&nbsp;</td>
+        <td width="120" align="center">
+        <asp:LinkButton ID="btnSubmit" runat="server" onclick="btnOrder_Click">
+        <img src="/images/fansy_top_xzdcbut.jpg" width="95" height="30" onmouseover="fansy_xzdc_onm(this)" onmouseout="fansy_xzdc_out(this)" style="cursor:pointer;"/>
+        </asp:LinkButton>
+        </td>
+        <td width="20">&nbsp;</td>
+        <td width="330">
+   	        <table width="320" class="fansy_toptab" height="20" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+              	<td width="20" align="center"><img src="/images/help.png" width="16" height="16" style="margin-top:-2px;"/></td>
+                <td width="60"><a href="/help.aspx">帮助中心</a></td>
+                <td width="20" align="center"><img src="/images/house2.png" width="18" height="18" style="margin-top:-2px;"/></td>
+                <td width="60"><a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.107fan.com');">设为首页</a></td>
+                <td width="20" align="center"><img src="/images/star.png" width="16" height="16"  style="margin-top:-2px;"/></td>
+                <td width="60"><a href="javascript:;" onclick="window.external.AddFavorite('http://www.107fan.com','邀您吃饭网')">加入收藏</a></td>
+                <td width="20" align="center"><img src="/images/coins.png" width="16" height="16"  style="margin-top:-2px;"/></td>
+                <td width="60"><a href="/Users/onlinerecharge.aspx">积分充值</a></td>
+              </tr>
+            </table>
+        </td>
+      </tr>
+    </table>
+  </div>
     <div class="fansy_baner">
         <div class="fansy_baner_lxx">
             最新消息：<a href="###">东街口85度C新店开业！</a></div>

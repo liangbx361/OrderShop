@@ -25,7 +25,7 @@ namespace web
                 }
             }
         }
-
+     
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             UsersBLL bll = new UsersBLL();
@@ -52,7 +52,7 @@ namespace web
                     }
                     catch (FormatException ee)
                     {
-                        Response.Redirect("/setaddress.aspx");
+                        Utils.alert("您尚拥有收餐地址，请先设定一个", "/Users/useraddress.aspx");
                     }
                 }
                 else
@@ -64,6 +64,11 @@ namespace web
             {
                 Utils.alert("登录失败!", "login.aspx");
             }
+        }
+
+        protected void btnLook_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/shoplist.aspx");
         }
     }
 }

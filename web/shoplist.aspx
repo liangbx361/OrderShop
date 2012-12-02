@@ -77,6 +77,8 @@
     <div id="main">
         <div style="height: 10px;"></div>
         <div style="position: relative; height: 38px; top: 0px; left: 0px; background: url(images/yncf_40.gif)">
+            <% if (AreaName != string.Empty)
+               {%>
             <table id="ps2" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="188">
@@ -99,6 +101,21 @@
                     </td>
                 </tr>
             </table>
+            <% }
+               else
+               {%>
+            <table id="ps4" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="188">
+                        &nbsp;
+                    </td>
+                    <td width="300" align="left">
+                        您可以先浏览菜单，如需订餐请先
+                        <a href="login.aspx" type="text/asp" style="color: #0066FF">登录</a>
+                    </td>                   
+                </tr>
+            </table>
+            <% } %>
         </div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 0px;">
             <tr>
@@ -180,13 +197,11 @@
                                                                 <span class="bdms_15" style="float: left; padding-right: 10px;">
                                                                     <div class="star<%#Eval("AvgPoint") %>">
                                                                     </div>
-                                                                </span><span class="bdms_07">口味：<span><%#Eval("AvgTastePoint")%></span>环境：<span><%#Eval("AvgMilieuPoint")%></span>服务：<span><%#Eval("AvgServicePoint")%></span></span>
-                                                            </td>
+                                                                </span><span class="bdms_07">口味：<span><%#Eval("AvgTastePoint")%></span>环境：<span><%#Eval("AvgMilieuPoint")%></span>服务：<span><%#Eval("AvgServicePoint")%></span></span></td>
                                                         </tr>
                                                         <tr>
                                                             <td height="23">
-                                                                <span class="bdms_08">地址：<%#Eval("Address") %></span>
-                                                            </td>
+                                                                <span class="bdms_08">地址：<%#Eval("Address") %></span></td>
                                                         </tr>
                                                         <tr>
                                                             <td height="25" style="color: #999; font-size: 13px;">
@@ -197,8 +212,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td height="22">
-                                                                <span class="bdms_06">营业时间：<%#Eval("opentime")%></span><span class="bdms_06">预定时间：<%#Eval("ordertime") %></span>
-                                                            </td>
+                                                                <span class="bdms_06">营业时间：<%#Eval("opentime")%></span><span class="bdms_06">预定时间：<%#Eval("ordertime") %></span></td>
                                                         </tr>
                                                     </table>
                                                 </td>

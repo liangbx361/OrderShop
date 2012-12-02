@@ -15,6 +15,7 @@ namespace web
         AreaBLL bll = new AreaBLL();
         private int promotionid = 0; //推广人ID
         protected WebSet webset = new BasePage().webset;
+        private int gender = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["userid"] != null)
@@ -53,13 +54,21 @@ namespace web
                 item.UserName = UserName;
                 item.NickName = "";
                 item.UserPass = Utils.MD5Encrypt32(txtPass.Value);
-                item.Gender = 0;
+                if (RadioButtonListGender.SelectedValue != "")
+                {
+                    item.Gender = Convert.ToInt32(RadioButtonListGender.SelectedValue);
+                }
+                else item.Gender = 0;                 
+
                 item.Mobile = txtMobile.Value;
                 item.Birthday = "";
                 item.Email = txtEmail.Value;
                 item.Address = ",,||2";
                 item.Utype = 0;
                 item.ShopId = 0;
+
+                
+
                 if (promotionid == 0)
                 {
                     string promotion = Utils.GetCookie("promotion");
@@ -80,6 +89,16 @@ namespace web
                     Utils.alert("注册失败,请稍后重试!", "register.aspx");
                 }
             }
+        }
+
+        protected void btnLook_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/shoplist.aspx");
+        }
+
+        protected void radioButtonListGender(object sender, EventArgs e)
+        {
+            gender = Convert.ToInt32(RadioButtonListGender.SelectedValue);
         }
     }
 }

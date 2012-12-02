@@ -24,7 +24,7 @@
     <input type="hidden" id="hidden_shopid" runat="server" value="0" />
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="80%" height="20" id="path2">当前位置：<a href="/">邀您吃饭</a> > <a href="shoplist.aspx">外卖餐厅</a> > <%=item.ShopName %></td>
+    <td width="80%" height="20" id="path2">当前位置：<a href="/">邀您吃饭</a> > <asp:LinkButton ID="LinkButton1" runat="server" onclick="shopInof_onClick">外卖餐厅</asp:LinkButton> > <%=item.ShopName %></td>
     <td width="4%">分享：</td>
     <td width="16%" id="path3"><a href="#"><img src="images/yncf_50.gif" width="19" height="24" /></a><a href="#"><img src="images/yncf_51.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_52.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_53.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_54.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_55.gif" width="20" height="24" /></a></td>
   </tr>

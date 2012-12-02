@@ -21,15 +21,58 @@ namespace web.Users
             if (!IsPostBack)
             {
                 PageInit();
-                AreaInit("");
+
+                //AreaInit("");
             }
         }
 
         private void PageInit()
         {
             UserInfo item = Session["cudoUser"] as UserInfo;
-            rpt_list.DataSource = bll.GetList(item.Id); ;
+            rpt_list.DataSource = bll.GetList(item.Id); 
             rpt_list.DataBind();
+
+            List<UserAddress> list = bll.GetList(item.Id);
+            foreach (UserAddress user in list) {
+                string[] itemlist = user.Address.Split('|')[0].Split(',');
+                if (user.IsDefault == 1 && itemlist[0] == "")
+                {
+                    btn_Add.Visible = false;
+                    btn_modify.Visible = true;
+                    ddladdtype.Value = user.Address.Split('|')[2];
+                    txtusername.Value = user.UserName;
+                    txtmobile.Value = user.Mobile;
+                    chkdefult.Checked = user.IsDefault == 1 ? true : false;
+                    hiddenid.Value = Convert.ToString(user.Id);
+                    itemlist = user.Address.Split('|')[0].Split(',');
+                    AreaInit(itemlist[0]);
+                    StreetInit(itemlist[0], itemlist[1]);
+                    DistrictInit(itemlist[1], itemlist[2]);
+                    break;
+                }
+                else
+                {
+                    AreaInit("");
+                    break;
+                }
+            }
+            
+        }
+
+        private void PageReInit()
+        {
+            UserInfo item = Session["cudoUser"] as UserInfo;
+            rpt_list.DataSource = bll.GetList(item.Id);
+            rpt_list.DataBind();
+
+            ddladdtype.Value = "";
+            txtusername.Value = "";
+            txtmobile.Value = "";
+            chkdefult.Checked = false;
+
+            AreaInit("");
+            StreetInit("", "");
+            DistrictInit("", "");
         }
 
         protected void rpt_list_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -50,9 +93,12 @@ namespace web.Users
                 hiddenid.Value = e.CommandArgument.ToString();
 
                 string[] itemlist = item.Address.Split('|')[0].Split(',');
-                AreaInit(itemlist[0]);
-                StreetInit(itemlist[0], itemlist[1]);
-                DistrictInit(itemlist[1], itemlist[2]);
+                if (itemlist[0] != "")
+                {
+                    AreaInit(itemlist[0]);
+                    StreetInit(itemlist[0], itemlist[1]);
+                    DistrictInit(itemlist[1], itemlist[2]);
+                }
             }
             if (e.CommandName == "default")
             {
@@ -179,7 +225,10 @@ namespace web.Users
                     }
                 }
             }
-            PageInit();
+            PageReInit();
+
+            btn_Add.Visible = true;
+            btn_modify.Visible = false;
         }
 
         protected void btn_modify_Click(object sender, EventArgs e)
@@ -214,7 +263,10 @@ namespace web.Users
                     bll.UpdateAddress(item);
                 }
             }
-            PageInit();
+            PageReInit();
+
+            btn_Add.Visible = true;
+            btn_modify.Visible = false;
         }
 
         protected void order_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace web
         ShopsBLL bll = new ShopsBLL();
         protected Shop item = new Shop();
         protected int shopid = 0;
-        private int see_pic = 0;
+        protected int see_pic = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             shopid = base.GetIntValue("shopid");
@@ -65,9 +65,9 @@ namespace web
                     strResult.Append("<li>");
                     strResult.Append("<span class=\"sl\">" + pitem.ProductName + "</span>");
                     strResult.Append("<span class=\"sr\">");
-                    strResult.Append("<img src=\"/images/yj_tu.gif\"/>");
+                    //strResult.Append("<img src=\"/images/yj_tu.gif\"/>");
                     strResult.Append("<S class=\"price\">￥" + pitem.Price + "</S>");
-                    strResult.Append("<img src=\"/images/hy_tu.gif\"/>");
+                    //strResult.Append("<img src=\"/images/hy_tu.gif\"/>");
                     strResult.Append("<span class=\"price2\" color=#ffff>￥" + pitem.Price2 + "</span>");
                     strResult.Append("<a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span>");
                     strResult.Append("</li>");
@@ -75,6 +75,29 @@ namespace web
                 strResult.Append("</ul>");
             }
             return strResult.ToString();
+        }
+
+        protected void shopInof_onClick(object sender, EventArgs e)
+        {
+            UserInfo item = Session["cudoUser"] as UserInfo;
+
+            if (item == null)
+            {
+                Response.Redirect("/shoplist.aspx");
+            }
+            else
+            {
+                string[] addlist = item.Address.Split('|')[0].Split(',');
+                try
+                {
+                    int aid = Convert.ToInt32(addlist[0]);
+                    Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                }
+                catch (FormatException ee)
+                {
+                    Response.Redirect("/error.html");
+                }
+            }
         }
     }
 }

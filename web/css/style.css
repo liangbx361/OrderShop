@@ -63,6 +63,7 @@
 #ps3 div{border:1px solid #CCC;font-size:12px;background:#FFF;float:left;padding-right:0px;padding:2px 3px;margin-right:5px}
 #ps3 div span{float:left}
 #ps3 div img{margin-left:3px;}
+#ps4{width:1017px;height:38px; position:absolute;background:url(/images/yncf_40.gif) no-repeat;left:-17px;font-size:14px;color:#666}
 #tz{font-size:14px}
 #tz a{background:#FFF;border:1px solid #CCC;font-size:12px;height:15px;float:left;padding:0 5px;padding-top:3px;margin-left:5px}
 #tz a:hover{ text-decoration:none;background:url(/images/yncf_30.GIF) repeat-x;border:1px solid #ffbd6f;color:#f80211}
@@ -190,7 +191,7 @@
 .shopcar{width:242px; margin:0 auto;}
 .shopcar_top{background: url(/images/yncf_61.gif) no-repeat; width:242px; height:47px;}
 .shopcar_middle{background: url(/images/yncf_62.gif) repeat-y; width:242px; height:auto;}
-.shopcar_bottom{width:242px;height:35px;background: url(/images/yncf_63.gif) no-repeat;text-align:center;}
+.shopcar_bottom{width:242px;height:44px;background: url(/images/yncf_63.gif) no-repeat;text-align:center;}
 .shopcar_bottom img{margin-top:8px;cursor:pointer;}
 .shopcar_products{margin:0 10px;}
 .shopcar_price{border-top:1px solid #ccc;margin:0 15px;font-size:14px;font-weight:bold;line-height:35px;}

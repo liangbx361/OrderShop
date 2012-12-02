@@ -31,3 +31,11 @@ a{blr:expression(this.onFocus=this.blur());}/*ie6*/
 .fansy_fotnr{ width:1000px; height:28px; line-height:28px; background:url(../images/fansy_foot_bj.gif) left top repeat-x; color:#FFF;}
 .fansy_fotnr a{color:#ffffff; text-decoration:none;}
 .fansy_fotnr a:hover{color:#ffffff; text-decoration:underline;}
+
+
+
+
+.cfw_fotfw{ width:1000px; height:140px; background:url(../images/cfwny_fwdbj.gif) left top no-repeat; padding:0; margin:0 auto;}
+.cfw_fotfw_ltd{ background:url(../images/cfwny_icon_d.gif) 6px center no-repeat; padding-left:16px;}
+.cfw_fotfw_ltd a{ color:#666; text-decoration:none;}
+.cfw_fotfw_ltd a:hover{ color:#F90; text-decoration:none;}

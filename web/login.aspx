@@ -79,8 +79,7 @@
                                             &nbsp;
                                         </td>
                                         <td colspan="2">
-                                            <a href="/findpwd.aspx">忘记密码？</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.aspx">马上注册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="###">邮件激活</a>
+                                            <a href="/findpwd.aspx">忘记密码？</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.aspx">马上注册</a>&nbsp;&nbsp;&nbsp;&nbsp;
                                         </td>
                                     </tr>
                                     <tr>
@@ -111,7 +110,9 @@
                                             <font style="font-size: 15px"><strong>我想先：</strong></font>
                                         </td>
                                         <td width="515" height="40">
+                                            <asp:LinkButton ID="btnLook" runat="server" OnClick="btnLook_Click">
                                             <img src="images/fw_lg_llcdbut.gif" width="117" height="33" />
+                                            </asp:LinkButton>
                                         </td>
                                     </tr>
                                     <tr>

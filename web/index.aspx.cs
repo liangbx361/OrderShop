@@ -24,7 +24,8 @@ namespace web
         {
             if (item == null)
             {
-                Utils.alert("请先登录", "/login.aspx");
+                //Utils.alert("进入浏览如需订餐请先登录", "/login.aspx");
+                Response.Redirect("/login.aspx");
             }
             else
             {
@@ -36,7 +37,8 @@ namespace web
                 }
                 catch (FormatException ee)
                 {
-                    Response.Redirect("/setaddress.aspx");
+                    Utils.alert("您尚未拥有收餐地址，请先设定一个", "/Users/useraddress.aspx");
+                    //Response.Redirect("/setaddress.aspx");
                 }
             }
         }

@@ -52,7 +52,8 @@
 <div style="padding:30px 60px;">
 <table border="0" cellspacing="0" cellpadding="0" class="af3">
   <tr>
-    <td height="35" background="/images/yncf_86.gif" style="border-bottom:1px solid #dcdcdc;font-weight:bold;padding-left:30px;">收货地址管理</td>
+    <td height="35" background="/images/yncf_86.gif" style="border-bottom:1px solid #dcdcdc;font-weight:bold;padding-left:30px;">收货地址管理
+    </td>
     </tr>
   <tr>
     <td height="40" align="right" style="padding:5px">

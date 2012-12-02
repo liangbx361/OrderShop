@@ -26,7 +26,8 @@
     <input type="hidden" id="hidden_shopid" runat="server" value="0" />
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="80%" height="20" id="path2">当前位置：<a href="/">邀您吃饭</a> > <a href="shoplist.aspx">外卖餐厅</a> > <%=item.ShopName %></td>
+    <td width="80%" height="20" id="path2">当前位置：<a href="/index.aspx">邀您吃饭</a> > 
+        <asp:LinkButton runat="server" onclick="shopInof_onClick">外卖餐厅</asp:LinkButton> > <%=item.ShopName %></td>
     <td width="4%">分享：</td>
     <td width="16%" id="path3"><a href="#"><img src="images/yncf_50.gif" width="19" height="24" /></a><a href="#"><img src="images/yncf_51.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_52.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_53.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_54.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_55.gif" width="20" height="24" /></a></td>
   </tr>
@@ -107,7 +108,27 @@
 <asp:Repeater ID="rpt_tyleprolist" runat="server" EnableViewState="false"><ItemTemplate>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:10px;">
 <tr>
-<td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">&nbsp;>&nbsp;<%#Eval("TypeName") %>
+<td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">
+    &nbsp;>&nbsp;<%#Eval("TypeName") %><% if (see_pic == 0)
+       {%><ul class="cdlist2">
+	    <li>
+            <span class="sl"></span>
+            <span class="sr">
+		    <img src="/images/cfw_yjtu.gif"/>
+		    <S class="price"></S>
+		    <img src="/images/cfw_hyjtu.gif"/>
+		    <span class="price2" color=#ffff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>		
+	    </li>
+        <li>
+            <span class="sl"></span>
+            <span class="sr">
+		    <img src="/images/cfw_yjtu.gif"/>
+		    <S class="price"></S>
+		    <img src="/images/cfw_hyjtu.gif"/>
+		    <span class="price2" color=#ffff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>		
+	    </li>
+    </ul> 
+    <% } %>
 </td>
 </tr>
   <tr>
@@ -136,7 +157,7 @@
         <div class="shopcar_tel"><%=item.Phone %></div>
     </div>
 </div>
-<div class="shopcar_bottom"><img src="images/yncf_59.gif" width="122" height="22" onclick="carnext()" /></div>
+<div class="shopcar_bottom"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()" /></div>
 </div>
 </div>
 </div>
