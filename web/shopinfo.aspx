@@ -110,22 +110,22 @@
 <tr>
 <td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">
     &nbsp;>&nbsp;<%#Eval("TypeName") %><% if (see_pic == 0)
-       {%><ul class="cdlist2">
-	    <li>
+       {%><ul class="cdlist2" style="position:absolute; z-index:10; margin-top:-30px;">
+	    <li style="border-bottom:none;">
             <span class="sl"></span>
-            <span class="sr">
-		    <img src="/images/cfw_yjtu.gif"/>
+            <span class="sr"></span>
+		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px;"/>
 		    <S class="price"></S>
 		    <img src="/images/cfw_hyjtu.gif"/>
-		    <span class="price2" color=#ffff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>		
+		    <span class="price2" color=#ffff></span>		
 	    </li>
-        <li>
+        <li style="border-bottom:none;">
             <span class="sl"></span>
-            <span class="sr">
-		    <img src="/images/cfw_yjtu.gif"/>
+            <span class="sr"></span>
+		    <img src="/images/cfw_yjtu.gif"style="margin-left:196px;" />
 		    <S class="price"></S>
 		    <img src="/images/cfw_hyjtu.gif"/>
-		    <span class="price2" color=#ffff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>		
+		    <span class="price2" color=#ffff></span>		
 	    </li>
     </ul> 
     <% } %>
@@ -152,12 +152,12 @@
 <div class="shopcar_middle">
     <div id="order_list">
     </div>
-    <div class="shopcar_btn">
+    <div class="shopcar_btn" style=" overflow:hidden;">
         <div class="shopcar_tip">本店非特约，请自行电话订餐</div>
-        <div class="shopcar_tel"><%=item.Phone %></div>
+        <div class="shopcar_tel" style="height:70px;"><%=item.Phone %></div>
     </div>
 </div>
-<div class="shopcar_bottom"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()" /></div>
+<div class="shopcar_bottom" style="height:48px; padding-top:6px;"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()"/></div>
 </div>
 </div>
 </div>

@@ -77,6 +77,7 @@
     <div id="main">
         <div style="height: 10px;"></div>
         <div style="position: relative; height: 38px; top: 0px; left: 0px; background: url(images/yncf_40.gif)">
+            
             <% if (AreaName != string.Empty)
                {%>
             <table id="ps2" border="0" cellspacing="0" cellpadding="0">
@@ -85,7 +86,7 @@
                         &nbsp;
                     </td>
                     <td width="100" align="center">
-                        您的收餐地址：
+                        &nbsp;&nbsp;<font color="#ff3300" style="font-size:12px;"><strong>您的收餐地址：</strong></font>
                     </td>
                     <td id="ps3">
                         <%if (AreaName != string.Empty)
@@ -93,15 +94,13 @@
                               <span><%=AreaName%></span>                                                                                       
                               </div>                              
                         <%} %>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span><a href="/Users/useraddress.aspx"><img alt="" src="/images/ggdzbut.gif"></img></a></span> 
                     </td>
                     <td>
-                        <div align="right">
-                            <span><a href="/Users/useraddress.aspx"><img alt="" src="/images/ggdzbut.gif"></img></a></span>   
-                        </div>
                     </td>
                 </tr>
             </table>
-            <% }
+             <% }
                else
                {%>
             <table id="ps4" border="0" cellspacing="0" cellpadding="0">
@@ -115,7 +114,7 @@
                     </td>                   
                 </tr>
             </table>
-            <% } %>
+            <% } %> 
         </div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 0px;">
             <tr>
