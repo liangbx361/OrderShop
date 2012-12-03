@@ -2,46 +2,51 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data;
+using System.ServiceModel.Web;
+using System.Runtime.Serialization.Json;
+using System.Web.Script.Serialization;
+using System.IO;
 using System.Text;
-
 
 namespace web.WebService
 {
     public class JsonHelp
     {
-        #region dataTable转换成Json格式
-        /// <summary>    
-        /// dataTable转换成Json格式    
-        /// </summary>    
-        /// <param name="dt"></param>    
-        /// <returns></returns>    
-        public static string DataTableToJson(DataTable dt)
+        /// <summary>
+        /// 把对象序列化 JSON 字符串 
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="obj">对象实体</param>
+        /// <returns>JSON字符串</returns>
+        public static string GetJson<T>(T obj)
         {
-            StringBuilder jsonBuilder = new StringBuilder();
-            jsonBuilder.Append("{\"");
-            jsonBuilder.Append(dt.TableName.ToString());
-            jsonBuilder.Append("\":[");
-            for (int i = 0; i < dt.Rows.Count; i++)
+            //记住 添加引用 System.ServiceModel.Web 
+            /**
+             * 如果不添加上面的引用,System.Runtime.Serialization.Json; Json是出不来的哦
+             * */
+            DataContractJsonSerializer json = new DataContractJsonSerializer(typeof(T));
+            using (MemoryStream ms = new MemoryStream())
             {
-                jsonBuilder.Append("{");
-                for (int j = 0; j < dt.Columns.Count; j++)
-                {
-                    jsonBuilder.Append("\"");
-                    jsonBuilder.Append(dt.Columns[j].ColumnName);
-                    jsonBuilder.Append("\":\"");
-                    jsonBuilder.Append(dt.Rows[i][j].ToString());
-                    jsonBuilder.Append("\",");
-                }
-                jsonBuilder.Remove(jsonBuilder.Length - 1, 1);
-                jsonBuilder.Append("},");
+                json.WriteObject(ms, obj);
+                string szJson = Encoding.UTF8.GetString(ms.ToArray());
+                return szJson;
             }
-            jsonBuilder.Remove(jsonBuilder.Length - 1, 1);
-            jsonBuilder.Append("]");
-            jsonBuilder.Append("}");
-            return jsonBuilder.ToString();
         }
 
-        #endregion dataSet转换成Json格式
+        /// <summary>
+        /// 把JSON字符串还原为对象
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="szJson">JSON字符串</param>
+        /// <returns>对象实体</returns>
+        public static T ParseFormJson<T>(string szJson)
+        {
+            T obj = Activator.CreateInstance<T>();
+            using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(szJson)))
+            {
+                DataContractJsonSerializer dcj = new DataContractJsonSerializer(typeof(T));
+                return (T)dcj.ReadObject(ms);
+            }
+        }
     }
 }

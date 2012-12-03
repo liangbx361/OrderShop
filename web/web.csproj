@@ -50,6 +50,7 @@
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -482,8 +483,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService\JsonHelp.cs" />
+    <Compile Include="WebService\JsonHelp1.cs" />
     <Compile Include="WebService\LoginCheck.asmx.cs">
       <DependentUpon>LoginCheck.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\OrderCheck.asmx.cs">
+      <DependentUpon>OrderCheck.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebService\ShopInfo.asmx.cs">
@@ -1944,6 +1950,7 @@
     <Content Include="user_agreement.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebService\LoginCheck.asmx" />
+    <Content Include="WebService\OrderCheck.asmx" />
     <Content Include="WebService\ShopInfo.asmx" />
     <Content Include="WebService\ShopList.asmx" />
     <Content Include="WebService\UserAccount.asmx" />
