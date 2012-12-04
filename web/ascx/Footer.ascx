@@ -56,3 +56,31 @@
       </tr>
     </table>
 </div>
+
+<div class="cfw_fotfw" style="height:90px; background:none;">
+	<table width="1000" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="85" height="42">&nbsp;</td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu1.gif" width="110" height="41"/></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu2.gif" width="110" height="41" /></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu3.gif" width="110" height="41" /></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu4.gif" width="110" height="41" /></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu5.gif" width="110" height="41" /></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu6.gif" width="110" height="41" /></a></td>
+        <td width="10"></td>
+        <td width="110"><a href="###"><img src="/images/fw_fot_tu7.gif" width="110" height="41" /></a></td>
+        <td width="85">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="24" colspan="15" align="center">Copyright&copy;邀您吃饭. All Rights Reserved. 闽ICP备12013601号-1</td>
+      </tr>
+      <tr>
+        <td height="24" colspan="15" align="center"><img src="/images/pic.gif" width="50" height="12" /></td>
+      </tr>
+    </table>
+</div>

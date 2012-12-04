@@ -10,7 +10,7 @@
     <!--ie6 支持png透明 js-->
     <link style="text/css" rel="stylesheet" href="css/fansy.css" />
     <!--107吃饭首页css-->
-    <script src="js/fansy.js"></script>
+    <script type="text/javascript" src="js/fansy.js"></script>
     <!--107吃饭首页 js-->
     <script language="javascript">
         //107吃饭首页 现在订餐 按钮切换

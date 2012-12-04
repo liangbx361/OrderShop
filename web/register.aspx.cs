@@ -93,7 +93,7 @@ namespace web
 
         protected void btnLook_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/shoplist.aspx");
+            Response.Redirect("/BrowseShop.aspx");
         }
 
         protected void radioButtonListGender(object sender, EventArgs e)

@@ -3,7 +3,10 @@ body{ padding:0px; margin:0 auto; font-size:12px; color:#000; font-family:Arial,
 *{margin:0; padding:0px;}
 ul,li,dl,dt,dd{list-style:none;}
 input,select,img{vertical-align:middle;}
-img{border:none;}
+img{
+	border:none;
+	padding-bottom: 6px;
+}
 a{color:#000; text-decoration:none;}
 a:hover{color:#F00; text-decoration:underline;}
 a:focus{ outline-style:none;}
@@ -32,6 +35,14 @@ a{blr:expression(this.onFocus=this.blur());}/*ie6*/
 .fansy_fotnr a{color:#ffffff; text-decoration:none;}
 .fansy_fotnr a:hover{color:#ffffff; text-decoration:underline;}
 
+
+#sheng{width:430px; height:341px; position:absolute; background:url(../images/fw_nyqhdz_dbj.gif) left top no-repeat; border:none; z-index:5; left:50%; margin-left:-200px; top:20%; display:none;}
+#TouMingDiv{z-index:4; position:absolute; border:none; background-color:#666; filter:Alpha
+(style=2,opacity=10,finishopacity=30,startX=10,finishX=100); opacity:0.3; display:none; left:0px; right:0px; top:0px;}
+#ifsheng{z-index:2; position:absolute; display:none; filter:Alpha(style=2,opacity=o,finishopacity=0); opacity:0; left:0px; right:0px; top:0px;}
+#shengneirou{height:341px; width:430px;}
+.qhdz_til{ width:1000px; height:33px; line-height:33px; background:url(../images/fw_dqscdz_bj.gif) left top no-repeat; padding:0; margin:0 auto;}
+.cfwxzdz_td{ font-size:12px; color:#444; background:url(../images/fw_nyqhdz_dx.gif) left bottom repeat-x; cursor:pointer; line-height:30px;}
 
 
 

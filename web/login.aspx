@@ -11,8 +11,9 @@
     <link style="text/css" rel="stylesheet" href="css/fan_lg.css" />
     <!--107³Ô·¹Ê×Ò³css-->
     
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/userarea.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript" language="javascript"></script>
+    <script src="js/userarea.js" type="text/javascript" language="javascript"></script>
+    <script src="js/fansy.js" type="text/javascript" language="javascript"></script>
 
 </head>
 <body>
@@ -87,7 +88,7 @@
                                             &nbsp;
                                         </td>
                                         <td colspan="2">
-                                            <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click"><img src="/images/fw_lg_tjbut.gif" width="117" height="33" style="cursor:pointer;"/></asp:LinkButton>
+                                            <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click"><img src="/images/fw_lg_tjbut.gif" width="117" height="33" onmouseover="fansy_submit_onm(this)" onmouseout="fansy_submit_out(this)" style="cursor:pointer;"/></asp:LinkButton>
                                         </td>
                                     </tr>
                                     <tr>
@@ -111,7 +112,7 @@
                                         </td>
                                         <td width="515" height="40">
                                             <asp:LinkButton ID="btnLook" runat="server" OnClick="btnLook_Click">
-                                            <img src="images/fw_lg_llcdbut.gif" width="117" height="33" />
+                                            <img src="images/fw_lg_lldpbut.gif" width="117" height="33" onmouseover="fansy_lldp_onm(this)" onmouseout="fansy_lldp_out(this)"/>
                                             </asp:LinkButton>
                                         </td>
                                     </tr>

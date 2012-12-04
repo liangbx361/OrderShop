@@ -193,7 +193,7 @@
                                         </td>
                                         <td colspan="2">
                                             <asp:LinkButton ID="btnSubmit" runat="server" onclick="btnSubmit_Click" OnClientClick="return CheckAll()">
-                                            <img src="images/fw_lg_tjbut.gif" width="117" height="33" style="cursor: pointer;" />
+                                            <img src="images/fw_lg_tjbut.gif" width="117" height="33" onmouseover="fansy_submit_onm(this)" onmouseout="fansy_submit_out(this)" style="cursor: pointer;" />
                                             </asp:LinkButton>
                                         </td>
                                     </tr>
@@ -219,7 +219,7 @@
                                         </td>
                                         <td width="515" height="40">
                                             <asp:LinkButton ID="btnLook" runat="server" OnClick="btnLook_Click">
-                                            <img src="images/fw_lg_llcdbut.gif" width="117" height="33" />
+                                            <img src="images/fw_lg_lldpbut.gif" width="117" height="33" onmouseover="fansy_lldp_onm(this)" onmouseout="fansy_lldp_out(this)"/>
                                             </asp:LinkButton>
                                         </td>
                                     </tr>

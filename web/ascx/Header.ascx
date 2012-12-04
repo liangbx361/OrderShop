@@ -4,25 +4,7 @@
 <script type="text/javascript" src="/js/unitpngfix.js"></script><!--ie6 支持png透明 js-->
 
 <link style="text/css" rel="stylesheet" href="/css/fansy.css"/><!--107吃饭首页css-->
-<script src="js/fansy.js"></script><!--107吃饭首页 js-->
-
-<script language="javascript">
-    //107吃饭首页 现在订餐 按钮切换
-    function fansy_xzdc_onm(fansy_xzdc_obj) {
-        fansy_xzdc_obj.src = "/images/fansy_top_xzdcbutonc.jpg";
-    }
-    function fansy_xzdc_out(fansy_xzdc_obj) {
-        fansy_xzdc_obj.src = "/images/fansy_top_xzdcbut.jpg";
-    }
-
-    //107吃饭首页 帮助中心 按钮切换
-    function fansy_bzzx_onm(fansy_bzzx_obj) {
-        fansy_bzzx_obj.src = "/images/fansy_top_bzzxbutonc.jpg";
-    }
-    function fansy_bzzx_out(fansy_bzzx_obj) {
-        fansy_bzzx_obj.src = "/images/fansy_top_bzzxbut.jpg";
-    }
-</script>
+<script src="/js/fansy.js" type="text/javascript" language="javascript"></script><!--107吃饭首页 js-->
 
 <div id="header">
     <div class="fansy_top">

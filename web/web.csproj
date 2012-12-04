@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Documents and Settings\liangbx\My Documents\Downloads\Json35r8\Bin\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,7 +53,9 @@
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceModel.Web">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,6 +67,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BrowseShop.aspx" />
     <Content Include="common\admin_upfiles.js" />
     <Content Include="common\Common.js" />
     <Content Include="common\Date\calendar.js" />
@@ -370,6 +376,7 @@
     <Content Include="common\MSClass.js" />
     <Content Include="common\nomessage.jpg" />
     <Content Include="css\fansy.css" />
+    <Content Include="default.aspx" />
     <Content Include="images\clear.gif" />
     <Content Include="images\coins.gif" />
     <Content Include="images\coins.png" />
@@ -468,6 +475,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowseShop.aspx.cs">
+      <DependentUpon>BrowseShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowseShop.aspx.designer.cs">
+      <DependentUpon>BrowseShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
