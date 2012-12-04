@@ -31,3 +31,34 @@ function fansy_bzzx_onm(fansy_bzzx_obj) {
 function fansy_bzzx_out(fansy_bzzx_obj) {
     fansy_bzzx_obj.src = "/images/fansy_top_bzzxbut.jpg";
 }
+
+//确认下单
+function fansy_order_onm(fansy_bzzx_obj) {
+    fansy_bzzx_obj.src = "/images/btn_check_order_butonm.gif";
+}
+function fansy_order_out(fansy_bzzx_obj) {
+    fansy_bzzx_obj.src = "/images/btn_check_order.gif";
+}
+
+//显示弹窗
+function shengxs() {
+    document.getElementById("sheng").style.display = "block";
+
+    var tmobj = document.getElementById("TouMingDiv");
+    tmobj.style.width = document.body.scrollWidth + "px";
+    tmobj.style.height = document.body.scrollHeight + "px";
+    tmobj.style.display = "block";
+
+    var ifobj = document.getElementById("ifsheng");
+    ifobj.style.width = document.body.scrollWidth + "px";
+    ifobj.style.height = document.body.scrollHeight + "px";
+    ifobj.style.display = "block";
+
+}
+
+//关闭弹窗
+function closesdiv() {
+    document.getElementById("sheng").style.display = "none";
+    document.getElementById("TouMingDiv").style.display = "none";
+    document.getElementById("ifsheng").style.display = "none";
+}

@@ -14,6 +14,8 @@
             CommandName="show" oncommand="linkbutton_command">LinkButton</asp:LinkButton>
     
     </div>
+    <asp:RadioButtonList ID="address_list" runat="server">
+    </asp:RadioButtonList>
     </form>
 </body>
 </html>

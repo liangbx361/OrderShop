@@ -14,6 +14,7 @@
     <script src="js/jquery.pack.js" type="text/javascript"></script>
     <script src="js/jQuery.blockUI.js" type="text/javascript"></script>
     <script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/fansy.js"></script>
     <style type="text/css">
         #menu #menu1 a
         {
@@ -77,6 +78,7 @@
             height: 130px;
         }
     </style>
+
     <script type="text/javascript">
         $(function () {
             $(window).scroll(function () {
@@ -126,6 +128,40 @@
         </div>
         <% if (AreaName != string.Empty)
            {%>
+        <div id="sheng">
+	<div id="shengneirou">
+	  <table width="430" border="0" cellspacing="0" cellpadding="0">
+	    <tr>
+	      <td height="40">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:14px; font-weight:bold; color:#FFF;">请选择切换的送餐地址</font></td>
+        </tr>
+	    <tr>
+	      <td height="248">
+          	<table width="430" height="248" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"></td>
+                <td width="410" valign="top">
+           	    	<div class="xzdznr_div" style="width:410px; height:248px; overflow:auto;">                        
+                        <asp:RadioButtonList ID="address_list" runat="server" Font-Size="Large" >
+                        </asp:RadioButtonList>
+                    </div>
+                </td>
+                <td width="10"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+	    <tr>
+	      <td height="48" align="center">
+          <a href="#"><img src="/images/fw_nyqhdz_qdbut.gif" width="107" height="33" /></a>
+          <a href="#" style="margin-left:20px;"><img src="/images/fw_nyqhdz_qxbut.gif" width="107" height="33"/></a>
+          </td>
+        </tr>
+      </table>
+    	
+    </div>
+</div>
+<div id="TouMingDiv"></div>
+<iframe id="ifsheng"></iframe>
         <div class="qhdz_til">
             <table width="1000" border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -134,9 +170,8 @@
                     </td>
                     <td width="820">
                         <span style="height: 28px; border: #CCC 1px solid; font-size: 14px; background: #FFF;
-                            height: 28px; line-height: 28px; margin-right: 10px;"><a style="padding: 2px 6px;">福州市仓山区建新镇凤高村</a></span>
-                        <a href="###" onclick="shengxs()">
-                            <img src="images/fw_nyqhdz_but.gif" width="97" height="24" /></a>
+                            height: 28px; line-height: 28px; margin-right: 10px;"><a style="padding: 2px 6px;"><%=AreaName %></a></span>
+                        <img src="images/fw_nyqhdz_but.gif" alt="aa" width="97" height="24" onclick="shengxs()"/>
                     </td>
                 </tr>
             </table>

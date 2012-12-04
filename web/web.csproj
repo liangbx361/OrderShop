@@ -376,10 +376,22 @@
     <Content Include="common\MSClass.js" />
     <Content Include="common\nomessage.jpg" />
     <Content Include="css\fansy.css" />
-    <Content Include="default.aspx" />
+    <Content Include="images\btn_check_order.gif" />
+    <Content Include="images\btn_check_order_butonm.gif" />
+    <Content Include="images\cfwny_fwdbj.gif" />
+    <Content Include="images\cfwny_icon_d.gif" />
+    <Content Include="images\cfw_hyjtu.gif" />
+    <Content Include="images\cfw_lg_dxt.gif" />
+    <Content Include="images\cfw_lg_hx.gif" />
+    <Content Include="images\cfw_lg_rdtu.jpg" />
+    <Content Include="images\cfw_lg_txhhmmm.gif" />
+    <Content Include="images\cfw_lg_txk1.gif" />
+    <Content Include="images\cfw_lg_txzhxx.gif" />
+    <Content Include="images\cfw_yjtu.gif" />
     <Content Include="images\clear.gif" />
     <Content Include="images\coins.gif" />
     <Content Include="images\coins.png" />
+    <Content Include="images\comments.png" />
     <Content Include="images\fansy_baner_bj.gif" />
     <Content Include="images\fansy_foot_bj.gif" />
     <Content Include="images\fansy_lnr_dbj.jpg" />
@@ -388,23 +400,42 @@
     <Content Include="images\fansy_rnr_tu1.jpg" />
     <Content Include="images\fansy_topdbj.jpg" />
     <Content Include="images\fansy_toplogo.jpg" />
+    <Content Include="images\fansy_toplogo2.jpg" />
     <Content Include="images\fansy_toprx.jpg" />
     <Content Include="images\fansy_top_bzzxbut.jpg" />
     <Content Include="images\fansy_top_bzzxbutonc.jpg" />
     <Content Include="images\fansy_top_xzdcbut.jpg" />
     <Content Include="images\fansy_top_xzdcbutonc.jpg" />
-    <Content Include="images\ggdzbut.gif" />
+    <Content Include="images\fw_dqscdz_bj.gif" />
+    <Content Include="images\fw_fot_tu1.gif" />
+    <Content Include="images\fw_fot_tu2.gif" />
+    <Content Include="images\fw_fot_tu3.gif" />
+    <Content Include="images\fw_fot_tu4.gif" />
+    <Content Include="images\fw_fot_tu5.gif" />
+    <Content Include="images\fw_fot_tu6.gif" />
+    <Content Include="images\fw_fot_tu7.gif" />
+    <Content Include="images\fw_lg_dkyy.gif" />
+    <Content Include="images\fw_lg_llcdbut.gif" />
+    <Content Include="images\fw_lg_llcdbutonm.gif" />
+    <Content Include="images\fw_lg_lldpbut.gif" />
+    <Content Include="images\fw_lg_lldpbutonm.gif" />
+    <Content Include="images\fw_lg_tjbut.gif" />
+    <Content Include="images\fw_lg_tjbutonm.gif" />
+    <Content Include="images\fw_lg_txzhxx.gif" />
+    <Content Include="images\fw_nyqhdz_but.gif" />
+    <Content Include="images\fw_nyqhdz_dbj.gif" />
+    <Content Include="images\fw_nyqhdz_qdbut.gif" />
+    <Content Include="images\fw_nyqhdz_qxbut.gif" />
+    <Content Include="images\help.png" />
     <Content Include="images\house.gif" />
     <Content Include="images\house.png" />
     <Content Include="images\house2.gif" />
     <Content Include="images\house2.png" />
     <Content Include="images\house3.png" />
-    <Content Include="images\hy_tu.gif" />
     <Content Include="images\logo.png" />
+    <Content Include="images\pic.gif" />
     <Content Include="images\star.gif" />
     <Content Include="images\star.png" />
-    <Content Include="images\unitpngfix.js" />
-    <Content Include="images\yj_tu.gif" />
     <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="js\fansy.js" />
@@ -481,13 +512,6 @@
     </Compile>
     <Compile Include="BrowseShop.aspx.designer.cs">
       <DependentUpon>BrowseShop.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -1302,7 +1326,6 @@
     <Content Include="images\addaddress.gif" />
     <Content Include="images\addaddress.jpg" />
     <Content Include="images\bg.jpg" />
-    <Content Include="images\bg_01.gif" />
     <Content Include="images\cancel.jpg" />
     <Content Include="images\dian.gif" />
     <Content Include="images\error.png" />
@@ -1352,13 +1375,6 @@
     <Content Include="images\yncf_19.GIF" />
     <Content Include="images\yncf_20.GIF" />
     <Content Include="images\yncf_21.GIF" />
-    <Content Include="images\yncf_22.gif" />
-    <Content Include="images\yncf_23.gif" />
-    <Content Include="images\yncf_24.gif" />
-    <Content Include="images\yncf_25.gif" />
-    <Content Include="images\yncf_26.gif" />
-    <Content Include="images\yncf_27.gif" />
-    <Content Include="images\yncf_28.gif" />
     <Content Include="images\yncf_29.GIF" />
     <Content Include="images\yncf_30.GIF" />
     <Content Include="images\yncf_31.gif" />
@@ -1388,7 +1404,6 @@
     <Content Include="images\yncf_55.gif" />
     <Content Include="images\yncf_57.gif" />
     <Content Include="images\yncf_58.gif" />
-    <Content Include="images\yncf_59.gif" />
     <Content Include="images\yncf_60.gif" />
     <Content Include="images\yncf_61.gif" />
     <Content Include="images\yncf_62.gif" />

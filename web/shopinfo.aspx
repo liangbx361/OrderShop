@@ -157,7 +157,7 @@
         <div class="shopcar_tel" style="height:70px;"><%=item.Phone %></div>
     </div>
 </div>
-<div class="shopcar_bottom" style="height:48px; padding-top:6px;"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()"/></div>
+<div class="shopcar_bottom" style="height:48px; padding-top:6px;"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()" onmouseover="fansy_order_onm(this)" onmouseout="fansy_order_out(this)"/></div>
 </div>
 </div>
 </div>

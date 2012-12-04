@@ -33,6 +33,19 @@ namespace web
             }
         }
 
+        private void addrssListInit()
+        {
+            UserInfo user = Session["cudoUser"] as UserInfo;
+            UserAddressBLL bll = new UserAddressBLL();
+            List<UserAddress> list = bll.GetList(user.Id);
+            List<string> addressList = new List<string>();
+            foreach(UserAddress u in list) {
+                addressList.Add(u.Address.Split('|')[1]);
+            }
+            address_list.DataSource = addressList;
+            address_list.DataBind();
+        }
+
         private void PageInit()
         {
             rpt_adverts.DataSource = new AdvertBLL().GetAdvertList(1);
@@ -106,6 +119,8 @@ namespace web
 
             //加载店铺
             shopinit();
+
+            addrssListInit();
         }
 
         private void shopinit()
