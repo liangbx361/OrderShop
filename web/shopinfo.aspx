@@ -27,7 +27,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="80%" height="20" id="path2">当前位置：<a href="/index.aspx">邀您吃饭</a> > 
-        <asp:LinkButton runat="server" onclick="shopInof_onClick">外卖餐厅</asp:LinkButton> > <%=item.ShopName %></td>
+        <asp:LinkButton id="shopListLink" runat="server" onclick="shopInof_onClick">外卖餐厅</asp:LinkButton> > <%=item.ShopName %></td>
     <td width="4%">分享：</td>
     <td width="16%" id="path3"><a href="#"><img src="images/yncf_50.gif" width="19" height="24" /></a><a href="#"><img src="images/yncf_51.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_52.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_53.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_54.gif" width="20" height="24" /></a><a href="#"><img src="images/yncf_55.gif" width="20" height="24" /></a></td>
   </tr>
@@ -153,7 +153,7 @@
     <div id="order_list">
     </div>
     <div class="shopcar_btn" style=" overflow:hidden;">
-        <div class="shopcar_tip">本店非特约，请自行电话订餐</div>
+        <div class="shopcar_tip">非网络订餐时段请自行电话订餐</div>
         <div class="shopcar_tel" style="height:70px;"><%=item.Phone %></div>
     </div>
 </div>

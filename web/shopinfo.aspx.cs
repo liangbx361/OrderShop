@@ -68,7 +68,7 @@ namespace web
                     //strResult.Append("<img src=\"/images/yj_tu.gif\"/>");
                     strResult.Append("<S class=\"price\">￥" + pitem.Price + "</S>");
                     //strResult.Append("<img src=\"/images/hy_tu.gif\"/>");
-                    strResult.Append("<span class=\"price2\" color=#ffff>￥" + pitem.Price2 + "</span>");
+                    strResult.Append("<span class=\"price2\" color=#ffff>￥" + (pitem.Price - (pitem.Price * item.zk / 100)) + "</span>");
                     strResult.Append("<a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span>");
                     strResult.Append("</li>");
                 }
@@ -83,7 +83,7 @@ namespace web
 
             if (item == null)
             {
-                Response.Redirect("/shoplist.aspx");
+                Response.Redirect("/BrowseShop.aspx");
             }
             else
             {

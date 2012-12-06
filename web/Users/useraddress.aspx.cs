@@ -286,8 +286,19 @@ namespace web.Users
                 {
                     if (emement.Id == id)
                     {
-                        string[] addlist = emement.Address.Split('|')[0].Split(',');
-                        Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                        try
+                        {
+                            string[] addlist = emement.Address.Split('|')[0].Split(',');
+                            if(addlist[0] != "") {
+                                Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                            } else {
+                                Utils.alert("您尚未拥有收餐地址，请先设定一个", "/Users/useraddress.aspx");
+                            }
+                        }
+                        catch (Exception ee)
+                        {
+                            Utils.alert("您尚未拥有收餐地址，请先设定一个", "/Users/useraddress.aspx");
+                        }
                     }
                 }
 

@@ -23,8 +23,8 @@ namespace web.Users
         private void PageInit()
         {
             UserInfo item = Session["cudoUser"] as UserInfo;
-            WebPager.RecordCount = bll.GetCount(item.Id, item.Utype);
-            rpt_list.DataSource = bll.GetList(WebPager.CurrentPageIndex, WebPager.PageSize, item.Id, item.Utype);
+            WebPager.RecordCount = bll.GetCount(item.Id);
+            rpt_list.DataSource = bll.GetList(WebPager.CurrentPageIndex, WebPager.PageSize, item.Id);
             rpt_list.DataBind();
         }
 

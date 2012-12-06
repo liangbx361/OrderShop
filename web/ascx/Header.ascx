@@ -38,7 +38,7 @@
   </div>
     <div class="fansy_baner">
         <div class="fansy_baner_lxx">
-            最新消息：<a href="###">东街口85度C新店开业！</a></div>
+            最新消息：<a href="###">107饭网全新改版，欢迎体验！</a></div>
         <div class="fansy_baner_rxx">
             &nbsp;&nbsp;
             <%if (Session["cudoUser"] == null)

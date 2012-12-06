@@ -12,7 +12,7 @@ namespace Cudo.Services
         /// 
         /// </summary>
         /// <returns>List数据集</returns>
-        public static List<Favorites> GetList(int pageindex, int pagesize, int userid, int typeid)
+        public static List<Favorites> GetList(int pageindex, int pagesize, int userid)
         {
             List<Favorites> list = new List<Favorites>();
             string spName = "cudo_getfavoritelist";
@@ -20,8 +20,7 @@ namespace Cudo.Services
             {
                 new SqlParameter("@pageindex",pageindex),
                 new SqlParameter("@pagesize",pagesize),
-                new SqlParameter("@userid",userid),
-                new SqlParameter("@typeid",typeid),
+                new SqlParameter("@userid",userid)
             };
             SqlDataReader dataReader = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues);
             try
@@ -83,13 +82,12 @@ namespace Cudo.Services
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues);
         }
 
-        public static int GetCount(int userid, int typeid)
+        public static int GetCount(int userid)
         {
             string spName = "cudo_getfavoritecountbyuid";
             SqlParameter[] paramvalues = new SqlParameter[]
             {
-                new SqlParameter("@userid", userid),
-                new SqlParameter("@typeid", typeid)
+                new SqlParameter("@userid",userid)
             };
             return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName,paramvalues));
         }

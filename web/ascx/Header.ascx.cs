@@ -35,7 +35,8 @@ namespace web
                 }
                 catch (FormatException ee)
                 {
-                    Response.Redirect("/setaddress.aspx");
+                    Utils.alert("您尚未拥有收餐地址，请先设定一个", "/Users/useraddress.aspx");
+                    //Response.Redirect("/setaddress.aspx");
                 }
             }
         }
