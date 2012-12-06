@@ -27,6 +27,11 @@ namespace Cudo.Business
             return UserAddressDAL.GetItemByID(id);
         }
 
+        public UserAddress GetDefaultAddress(int userid)
+        {
+            return UserAddressDAL.GetDefaultAddress(userid);
+        }
+
         /// <summary>
         /// 添加
         /// </summary>

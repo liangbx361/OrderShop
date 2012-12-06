@@ -61,7 +61,7 @@ namespace web.WebService
             orderinfoitem.UserId = Convert.ToInt32(orderObject["userId"].ToString());
             orderinfoitem.OrderPoint = Convert.ToDecimal(orderObject["orderPoint"].ToString());
             orderinfoitem.TotalPrice = Convert.ToDecimal(orderObject["totalNewPrice"].ToString());
-            orderinfoitem.UserTel = orderObject["userTel"].ToString();
+            orderinfoitem.UserTel = Convert.ToString(orderObject["userTel"]);
             orderinfoitem.UserName = orderObject["userName"].ToString();
             orderinfoitem.UserAddress = orderObject["userAddress"].ToString();
             orderinfoitem.AreaId = Convert.ToInt32(orderObject["areaId"].ToString());
@@ -70,11 +70,11 @@ namespace web.WebService
 
             if (new OrdersBLL().AddItem(orderinfoitem) > 0)
             {
-                ModifyTGPoint(orderinfoitem.UserId, zkSum, orderinfoitem.AddTime);
-                FastSendToShop(orderinfoitem.ShopId, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark, orderinfoitem.UserAddress, orderinfoitem.UserName, orderinfoitem.UserTel);
+                //ModifyTGPoint(orderinfoitem.UserId, zkSum, orderinfoitem.AddTime);
+                //FastSendToShop(orderinfoitem.ShopId, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark, orderinfoitem.UserAddress, orderinfoitem.UserName, orderinfoitem.UserTel);
+                return "ok";
             }
-
-            return "ok";
+            else return "false";
         }
 
         /// <summary>

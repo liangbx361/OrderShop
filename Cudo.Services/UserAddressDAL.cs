@@ -79,6 +79,39 @@ namespace Cudo.Services
             return item;
         }
 
+        public static UserAddress GetDefaultAddress(int userid)
+        {
+            UserAddress item = null;
+            string spName = "cudo_getdefaultaddressbyuserid";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@userid",userid)
+            };
+            SqlDataReader dataReader = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues);
+            try
+            {
+                if (dataReader.Read())
+                {
+                    item = new UserAddress();
+                    item.UserId = userid;
+                    item.UserName = dataReader["username"].ToString();
+                    item.Mobile = dataReader["mobile"].ToString();
+                    item.Address = dataReader["address"].ToString();
+                }
+            }
+            catch
+            {
+                dataReader.Close();
+                dataReader.Dispose();
+            }
+            finally
+            {
+                dataReader.Close();
+                dataReader.Dispose();
+            }
+            return item;
+        }
+
         public static int AddItem(UserAddress item)
         {
             string spName = "cudo_createuseraddress";

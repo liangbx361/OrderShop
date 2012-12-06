@@ -37,7 +37,7 @@ a{blr:expression(this.onFocus=this.blur());}/*ie6*/
 
 
 #sheng{width:430px; height:341px; position:absolute; background:url(../images/fw_nyqhdz_dbj.gif) left top no-repeat; border:none; z-index:5; left:50%; margin-left:-200px; top:20%; display:none;}
-#TouMingDiv{z-index:4; position:absolute; border:none; background-color:#666; filter:Alpha
+#TouMingDiv{z-index:4; position:fixed; border:none; background-color:#666; filter:Alpha
 (style=2,opacity=10,finishopacity=30,startX=10,finishX=100); opacity:0.3; display:none; left:0px; right:0px; top:0px;}
 #ifsheng{z-index:2; position:absolute; display:none; filter:Alpha(style=2,opacity=o,finishopacity=0); opacity:0; left:0px; right:0px; top:0px;}
 #shengneirou{height:341px; width:430px;}

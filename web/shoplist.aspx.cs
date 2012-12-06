@@ -20,6 +20,8 @@ namespace web
         protected int aid = 0; //地区
         protected int sid = 0; //街道
         protected int did = 0; //楼宇
+        protected int defaultIndex = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sortstr = base.GetStringValue("order", "hit");
@@ -30,6 +32,16 @@ namespace web
             if (!IsPostBack)
             {
                 PageInit();
+            }
+
+            if (aid == 0 && sid == 0 && did == 0)
+            {
+                AreaName = string.Empty;
+            }
+            else
+            {
+                AreaName = abll.GetAreaName(aid) + " " + abll.GetAreaName(sid) + " " + abll.GetAreaName(did);
+                //address_list.SelectedIndex = defaultIndex;
             }
         }
 
@@ -42,6 +54,9 @@ namespace web
             foreach(UserAddress u in list) {
                 addressList.Add(u.Address.Split('|')[1]);
             }
+
+            defaultIndex = addressList.IndexOf(abll.GetAreaName(aid)+ abll.GetAreaName(sid) + abll.GetAreaName(did));
+
             address_list.DataSource = addressList;
             address_list.DataBind();
         }
@@ -187,6 +202,40 @@ namespace web
                 prestr += Utils.CreateLinkStringUrl(para) + "&";
             }
             return prestr;
+        }
+
+        protected void addresIndexChange(object sender, EventArgs e)
+        {
+            string address = address_list.SelectedValue;
+
+            if (AreaName != address)
+            {
+
+            }
+        }
+
+        protected void addresbtn_Click(object sender, EventArgs e)
+        {
+            string address = address_list.SelectedValue;
+
+            if (AreaName != string.Empty && address != string.Empty && !AreaName.Equals(address))
+            {
+                UserInfo user = Session["cudoUser"] as UserInfo;
+                UserAddressBLL bll = new UserAddressBLL();
+                List<UserAddress> list = bll.GetList(user.Id);
+                foreach (UserAddress u in list)
+                {
+                    if (u.Address.Split('|')[1].Equals(address))
+                    {
+                        string[] id = u.Address.Split('|')[0].Split(',');
+                        Response.Redirect("/shoplist.aspx?aid=" + id[0] + "&sid=" + id[1] + "&did=" + id[2]);
+                    }
+                }
+            }
+            else
+            {
+                PageInit();
+            }
         }
     }
 }

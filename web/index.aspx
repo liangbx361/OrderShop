@@ -121,13 +121,13 @@
                     <td width="353" height="28" align="center">
                         <a href="###">网站条款</a>
                         |
-                        <a href="###">关于107饭网</a>
+                        <a href="/help.aspx?id=1">关于107饭网</a>
                         |
-                        <a href="###">联系我们</a>
+                        <a href="/about.aspx?id=5">联系我们</a>
                         |
-                        <a href="###">商家合作</a>
+                        <a href="/busecooperation.aspx">商家合作</a>
                         |
-                        <a href="###">常见问题</a>
+                        <a href="/help.aspx?id=10">常见问题</a>
                     </td>
                     <td width="647" align="center">
                         Copyright &copy; 邀您吃饭. All Rights Reserved. 闽ICP备12013601号

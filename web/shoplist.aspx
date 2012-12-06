@@ -141,7 +141,7 @@
                 <td width="10"></td>
                 <td width="410" valign="top">
            	    	<div class="xzdznr_div" style="width:410px; height:248px; overflow:auto;">                        
-                        <asp:RadioButtonList ID="address_list" runat="server" Font-Size="Large" >
+                        <asp:RadioButtonList ID="address_list" runat="server" Font-Size="Medium">
                         </asp:RadioButtonList>
                     </div>
                 </td>
@@ -152,8 +152,12 @@
         </tr>
 	    <tr>
 	      <td height="48" align="center">
-          <a href="#"><img src="/images/fw_nyqhdz_qdbut.gif" width="107" height="33" /></a>
-          <a href="#" style="margin-left:20px;"><img src="/images/fw_nyqhdz_qxbut.gif" width="107" height="33"/></a>
+          <asp:LinkButton ID="addressLink" runat="server" OnClick="addresbtn_Click">
+          <img src="/images/fw_nyqhdz_qdbut.gif" width="107" height="33"/>
+          </asp:LinkButton>
+
+          <a href="#" style="margin-left:20px;"><img src="/images/fw_nyqhdz_qxbut.gif" width="107" height="33" onclick="closesdiv()"/></a>
+          
           </td>
         </tr>
       </table>
@@ -165,8 +169,8 @@
         <div class="qhdz_til">
             <table width="1000" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="180">
-                        &nbsp;
+                    <td width="180">&nbsp;
+                        
                     </td>
                     <td width="820">
                         <span style="height: 28px; border: #CCC 1px solid; font-size: 14px; background: #FFF;
@@ -188,8 +192,8 @@
                                     <td width="30" colspan="2" style="font-weight: bold; color: #FFFF; padding-left: 20px">
                                         ËùÓÐ²Íµê(<%=WebPager.RecordCount %>
         ) </td>
-        <td width="70%" align="right">
-            &nbsp;
+        <td width="70%" align="right">&nbsp;
+            
         </td>
         </tr> </table> </tr>
         <tr>
