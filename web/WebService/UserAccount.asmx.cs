@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Text;
+using System.Net;
+using System.IO;
 
 using Cudo.Entities;
 using Cudo.Business;
@@ -20,6 +25,12 @@ namespace web.WebService
     // [System.Web.Script.Services.ScriptService]
     public class UserAccount : System.Web.Services.WebService
     {
+        /// <summary>
+        /// 修改用户密码
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [WebMethod]
         public string chanagePassword(string username, string password)
         {
@@ -33,6 +44,32 @@ namespace web.WebService
             }
             else {
                 return null;
+            }
+        }
+
+        [WebMethod]
+        public String changeMemberInfo(String values)
+        {
+            UserInfo item = new UserInfo();
+            UsersBLL bll = new UsersBLL();
+            JObject orderObject = JObject.Parse(values);
+
+            item.Id = Convert.ToInt32(orderObject["id"].ToString());
+            item.UserGroup = Convert.ToInt32(orderObject["usergroup"].ToString());
+            item.Gender = Convert.ToInt32(orderObject["gender"].ToString());
+            item.NickName = orderObject["nickName"].ToString().Replace("\"", "");
+            item.Mobile = orderObject["phone"].ToString().Replace("\"", "");
+            item.Email = orderObject["email"].ToString().Replace("\"", "");
+            item.Birthday = orderObject["birthday"].ToString().Replace("\"", "");
+            item.Address = orderObject["address"].ToString().Replace("\"", "");
+
+            if (bll.UpdateUser(item) > 0)
+            {
+                return "ok";
+            }
+            else
+            {
+                return "fail";
             }
         }
     }
