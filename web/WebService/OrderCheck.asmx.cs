@@ -43,7 +43,7 @@ namespace web.WebService
 
             for (int i = 0; i < dishArray.Count; i++)
             {
-                JObject dishObject = JObject.Parse(dishArray[0].ToString());
+                JObject dishObject = JObject.Parse(dishArray[i].ToString());
                 OrderItem oitem = new OrderItem();
                 oitem.OrderNo = orderno;
                 oitem.ProductId = Convert.ToInt32(dishObject["productId"].ToString());
@@ -54,23 +54,22 @@ namespace web.WebService
 
                 str.Append(oitem.ProductName + "(" + oitem.BuyNum + ") ");
             }
-            int zkSum = 0;
-            //zkSum = (decSum * list[0].zk / 100); //积分
+
             orderinfoitem.OrderNo = orderno;
             orderinfoitem.ShopId = Convert.ToInt32(orderObject["shopId"].ToString());
             orderinfoitem.UserId = Convert.ToInt32(orderObject["userId"].ToString());
             orderinfoitem.OrderPoint = Convert.ToDecimal(orderObject["orderPoint"].ToString());
             orderinfoitem.TotalPrice = Convert.ToDecimal(orderObject["totalNewPrice"].ToString());
-            orderinfoitem.UserTel = Convert.ToString(orderObject["userTel"]);
-            orderinfoitem.UserName = orderObject["userName"].ToString();
-            orderinfoitem.UserAddress = orderObject["userAddress"].ToString();
+            orderinfoitem.UserTel = orderObject["userTel"].ToString().Replace("\"", "");
+            orderinfoitem.UserName = orderObject["userName"].ToString().Replace("\"", "");
+            orderinfoitem.UserAddress = orderObject["userAddress"].ToString().Replace("\"", "");
             orderinfoitem.AreaId = Convert.ToInt32(orderObject["areaId"].ToString());
-            orderinfoitem.Remark = orderObject["remark"].ToString();
+            orderinfoitem.Remark = orderObject["remark"].ToString().Replace("\"", "");
             orderinfoitem.AddTime = DateTime.Now;
 
             if (new OrdersBLL().AddItem(orderinfoitem) > 0)
             {
-                //ModifyTGPoint(orderinfoitem.UserId, zkSum, orderinfoitem.AddTime);
+                ModifyTGPoint(orderinfoitem.UserId, orderinfoitem.OrderPoint, orderinfoitem.AddTime);
                 //FastSendToShop(orderinfoitem.ShopId, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark, orderinfoitem.UserAddress, orderinfoitem.UserName, orderinfoitem.UserTel);
                 return "ok";
             }
