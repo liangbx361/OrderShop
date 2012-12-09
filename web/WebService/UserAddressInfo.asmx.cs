@@ -24,6 +24,11 @@ namespace web.WebService
     // [System.Web.Script.Services.ScriptService]
     public class UserAddressInfo : System.Web.Services.WebService
     {
+        /// <summary>
+        /// 获取默认地址
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [WebMethod]
         public UserAddress getDefaultAddress(int userId)
         {
@@ -31,6 +36,11 @@ namespace web.WebService
             return user.GetDefaultAddress(userId);
         }
 
+        /// <summary>
+        /// 获取地址列表
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [WebMethod]
         public List<UserAddress> getList(int userId)
         {
@@ -83,6 +93,64 @@ namespace web.WebService
         {
             AreaBLL abll = new AreaBLL();
             return abll.GetListByidlist(sid);
+        }
+
+        /// <summary>
+        /// 添加新地址
+        /// </summary>
+        /// <param name="addressMessage"></param>
+        [WebMethod]
+        public string addNewAddress(string addressMessage)
+        {
+            JObject addressObject = JObject.Parse(addressMessage);
+            UserAddress item = new UserAddress();
+            UserAddressBLL bll = new UserAddressBLL();
+
+            item.UserId = Convert.ToInt32( addressObject["userid"].ToString() );
+            item.UserName = addressObject["username"].ToString().Replace("\"", "");
+            item.Mobile = addressObject["mobile"].ToString().Replace("\"", "");
+            item.Address = addressObject["address"].ToString().Replace("\"", "");
+            item.IsDefault = Convert.ToInt32( addressObject["isdefault"].ToString() );
+
+            if (bll.AddAddress(item) > 0) return "ok";
+
+            return "fail";
+        }
+
+        /// <summary>
+        /// 更新地址 
+        /// </summary>
+        /// <param name="addressMessage"></param>
+        [WebMethod]
+        public string updateAddress(string addressMessage)
+        {
+            JObject addressObject = JObject.Parse(addressMessage);
+            UserAddress item = new UserAddress();
+            UserAddressBLL bll = new UserAddressBLL();
+
+            item.Id = Convert.ToInt32(addressObject["id"].ToString());
+            item.UserId = Convert.ToInt32(addressObject["userid"].ToString());
+            item.UserName = addressObject["username"].ToString().Replace("\"", "");
+            item.Mobile = addressObject["mobile"].ToString().Replace("\"", "");
+            item.Address = addressObject["address"].ToString().Replace("\"", "");
+            item.IsDefault = Convert.ToInt32(addressObject["isdefault"].ToString());
+
+            if (bll.UpdateAddress(item) > 0) return "ok";
+
+            return "fail";
+        }
+
+        /// <summary>
+        /// 更改默认地址 要更换的地址id号
+        /// </summary>
+        /// <param name="id"></param>
+        [WebMethod]
+        public void updateDefaultAddress(int id)
+        {
+            UserAddressBLL bll = new UserAddressBLL();
+            UserAddress item = bll.GetAddressByID(id);
+            item.IsDefault = 1;
+            bll.UpdateAddress(item);
         }
     }
 }

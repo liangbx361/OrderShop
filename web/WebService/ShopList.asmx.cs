@@ -41,14 +41,27 @@ namespace web.WebService
         public DataSet getShopListByAddressId(int aid, int sid, int did, string orderType)
         {
             ShopsBLL bll = new ShopsBLL();
-
-            DataSet ds = bll.GetListByAreaIdSort(aid, orderType); //搜索所有的数据
-            if (sid > 0)
-                ds = bll.GetListByStreetId(sid);    //根据街道搜索
+            DataSet ds = null;
+ 
             if (did > 0)
                 ds = bll.GetListByDistrictId(did);  //根据楼宇搜索
+            else if (sid > 0)
+                ds = bll.GetListByStreetId(sid);    //根据街道搜索
+            else
+                ds = bll.GetListByAreaIdSort(aid, orderType); //搜索所有的数据
 
-            return ds;
+            foreach (DataTable dt in ds.Tables)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+                        return ds;
+                    }
+                }
+            }
+
+            return null;
         }
 
         /// <summary>
