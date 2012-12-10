@@ -47,7 +47,7 @@ namespace web.WebService
                 OrderItem oitem = new OrderItem();
                 oitem.OrderNo = orderno;
                 oitem.ProductId = Convert.ToInt32(dishObject["productId"].ToString());
-                oitem.ProductName = dishObject["dishName"].ToString();
+                oitem.ProductName = dishObject["dishName"].ToString().Replace("\"", "");
                 oitem.BuyNum = Convert.ToInt32(dishObject["orderNum"].ToString());
                 oitem.Price = Convert.ToDecimal(dishObject["oldPrice"].ToString());
                 new OrderItemBLL().AddItem(oitem); //将点的套餐保存在数据库中

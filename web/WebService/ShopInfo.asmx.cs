@@ -38,5 +38,12 @@ namespace web.WebService
 
             return list;
         }
+
+        [WebMethod]
+        public List<ShopComment> getShopComment(int shopId)
+        {
+            ShopCommentBLL bll = new ShopCommentBLL();
+            return bll.GetShopCommentsByShopId(1, 5, shopId);
+        }
     }
 }
