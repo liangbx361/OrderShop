@@ -43,7 +43,7 @@ namespace web.WebService
         public List<ShopComment> getShopComment(int shopId)
         {
             ShopCommentBLL bll = new ShopCommentBLL();
-            return bll.GetShopCommentsByShopId(1, 5, shopId);
+            return bll.GetShopCommentsByShopId(1, 1, shopId);
         }
     }
 }
