@@ -179,6 +179,11 @@ namespace web.WebService
                 return true;
             }
 
+        [WebMethod]
+        public List<OrderInfo> getOrderList(int userid)
+        {
+            OrdersBLL bll = new OrdersBLL();
+            return bll.GetListByUserId(1, 1, userid);
         }
     }
 }
