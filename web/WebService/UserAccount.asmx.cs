@@ -35,12 +35,11 @@ namespace web.WebService
         public string chanagePassword(string username, string password)
         {
             UsersBLL bll = new UsersBLL();
-            string _password = Utils.MD5Encrypt32(password);
             int userId = bll.CheckUserIDByUserName(username);
 
-            if (bll.UpdatePass(Utils.MD5Encrypt32(password), userId) > 0)
+            if (bll.UpdatePass(password, userId) > 0)
             {
-                return _password;
+                return "ok";
             }
             else {
                 return null;
@@ -178,6 +177,7 @@ namespace web.WebService
             {
                 return true;
             }
+        }
 
         [WebMethod]
         public List<OrderInfo> getOrderList(int userid)
