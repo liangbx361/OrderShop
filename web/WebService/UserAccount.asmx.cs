@@ -47,6 +47,11 @@ namespace web.WebService
             }
         }
 
+        /// <summary>
+        /// 更改个人资料
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
         [WebMethod]
         public String changeMemberInfo(String values)
         {
@@ -71,6 +76,109 @@ namespace web.WebService
             {
                 return "fail";
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns> 0:成功 1:用户名已注册 2:手机已经注册  3:邮箱已经被使用, -1:未知错误</returns>
+        [WebMethod]
+        public int registerAccount(string username, string mobile, string email, string password)
+        {
+            int returnCode = 0;
+
+            if (CheckUserName(username))
+            {
+                if (CheckMobile(mobile))
+                {
+                    if (CheckEmail(email))
+                    {
+                        returnCode = saveAccount(username, mobile, email, password);
+                    }
+                    else
+                    {
+                        returnCode = 3;
+                    }
+                } 
+                else
+                {
+                    returnCode = 2;
+                }
+            }
+            else 
+            {
+                returnCode = 1;
+            }
+
+            return returnCode;
+        }
+
+        private int saveAccount(string username, string mobile, string email, string password)
+        {
+            UsersBLL bll = new UsersBLL();
+            UserInfo item = new UserInfo();
+            item.UserName = username;
+            item.Mobile = mobile;
+            item.Email = email;
+            item.NickName = "";
+            item.UserPass = Utils.MD5Encrypt32(password);
+            item.Gender = 0;
+            item.Birthday = "";
+            item.Address = ",,||2";
+            item.Utype = 0;
+            item.ShopId = 0;
+            item.TotalPoint = 20;
+            item.PromotionId = 0;
+
+            if (bll.AddUser(item) > 0)
+            {
+                return 0;
+            }
+            else return -1;
+        }
+
+        private Boolean CheckUserName(string username)
+        {
+            int userid = new UsersBLL().CheckUserIDByUserName(username);
+            if (userid > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private Boolean CheckMobile(string mobile)
+        {
+            int userid = new UsersBLL().CheckUserByMobile(mobile);
+            if (userid > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        private Boolean CheckEmail(string email)
+        {
+            int userid = new UsersBLL().CheckUserByEmail(email);
+            if (userid > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
     }
 }
