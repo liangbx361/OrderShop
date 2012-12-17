@@ -179,11 +179,28 @@ namespace web.WebService
             }
         }
 
+        /// <summary>
+        /// 获得用户订单列表
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
         [WebMethod]
         public List<OrderInfo> getOrderList(int userid)
         {
             OrdersBLL bll = new OrdersBLL();
-            return bll.GetListByUserId(1, 1, userid);
+            return bll.GetListByUserId(1, 100, userid);
+        }
+
+        /// <summary>
+        /// 获取具体的菜单信息
+        /// </summary>
+        /// <param name="orderNo"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public List<OrderItem> getOrderItemList(string orderNo)
+        {
+            OrderItemBLL bll = new OrderItemBLL();
+            return bll.GetList(orderNo);
         }
     }
 }
