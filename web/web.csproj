@@ -442,6 +442,7 @@
     <Content Include="js\fansy.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\unitpngfix.js" />
+    <Content Include="touch\android.aspx" />
     <Content Include="upload\adlink\ad1.jpg" />
     <Content Include="upload\adlink\ad2.jpg" />
     <Content Include="upload\adlink\ad3.jpg" />
@@ -520,6 +521,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="touch\android.aspx.cs">
+      <DependentUpon>android.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="touch\android.aspx.designer.cs">
+      <DependentUpon>android.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
