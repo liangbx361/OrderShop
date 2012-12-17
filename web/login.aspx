@@ -176,7 +176,7 @@
                                         &nbsp;
                                     </td>
                                     <td class="cfw_lg_rtiltd">
-                                        107饭网订餐只接受一周内预定
+                                        107饭网订餐只接受当天内预定
                                     </td>
                                     <td>
                                         &nbsp;

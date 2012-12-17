@@ -438,7 +438,6 @@
     <Content Include="images\star.gif" />
     <Content Include="images\star.png" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
     <Content Include="js\fansy.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\unitpngfix.js" />

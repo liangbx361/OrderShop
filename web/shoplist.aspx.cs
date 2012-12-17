@@ -227,6 +227,7 @@ namespace web
                 {
                     if (u.Address.Split('|')[1].Equals(address))
                     {
+                        Session["selectAddress"] = u;
                         string[] id = u.Address.Split('|')[0].Split(',');
                         Response.Redirect("/shoplist.aspx?aid=" + id[0] + "&sid=" + id[1] + "&did=" + id[2]);
                     }

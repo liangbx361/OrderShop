@@ -47,14 +47,14 @@ namespace web.ashx
             }
             else
             {
-                UserInfo uinfo = new UsersBLL().GetUserByID(item.Id);
                 int result = 0;
-                int uaid = Convert.ToInt32(addlist[0].Split(',')[2]); //用户所在楼宇的id（默认）
-                int uaid2 = Convert.ToInt32(uinfo.Address.Split('|')[0].Split(',')[2]); //现在
+                UserAddress userAddress = context.Session["selectAddress"] as UserAddress;                
+                //int uaid = Convert.ToInt32(addlist[0].Split(',')[2]); //用户所在楼宇的id（默认）
+                int uaid2 = Convert.ToInt32(userAddress.Address.Split('|')[0].Split(',')[2]); //现在
                 List<Area> list = new AreaBLL().GetListByShopId(shopid);
                 foreach (Area temp in list)
                 {
-                    if (temp.Id == uaid || temp.Id == uaid2)
+                    if (temp.Id == uaid2)
                     {
                         result = 1;
                         break;

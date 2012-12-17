@@ -209,7 +209,7 @@ namespace web.Users
                     foreach (RepeaterItem temp in rpt_list.Items)
                     {
                         HiddenField hf = temp.FindControl("hfaddtype") as HiddenField;
-                        if (hf.Value == ddladdtype.Value)
+                        if (hf.Value == addpre.Split('|')[1])
                         {
                             flag = true;
                             break;
@@ -256,11 +256,19 @@ namespace web.Users
                 }
                 else
                 {
+                    string[] oldAddress = item.Address.Split('|')[0].Split(',');
                     item.UserName = txtusername.Value;
                     item.Mobile = txtmobile.Value;
                     item.Address = addpre;
                     item.IsDefault = chkdefult.Checked == true ? 1 : 0;
                     bll.UpdateAddress(item);
+
+                    if (oldAddress[0] == "")
+                    {
+                        //第一次设置地址，直接跳转到餐厅
+                        string[] addlist = item.Address.Split('|')[0].Split(',');
+                        Response.Redirect("/shoplist.aspx?aid=" + addlist[0] + "&sid=" + addlist[1] + "&did=" + addlist[2]);
+                    }
                 }
             }
             PageReInit();

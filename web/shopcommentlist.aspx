@@ -109,7 +109,7 @@
     <td width="21%" bgcolor="#fff0e0"><%#Eval("AddTime") %></td>
   </tr>
   <tr>
-    <td height="35" colspan="2" style="padding-left:50px"><span class="bdms_15" style="float:left;"><div class="star<%#Eval("TotalPoint")%>"></div></span> <span class="bdms_07">口味：<span><%#Eval("TastePoint")%></span> 环境：<span><%#Eval("MilieuPoint")%></span> 服务：<span><%#Eval("ServicePoint")%></span></span></td>
+    <td height="35" colspan="2" style="padding-left:50px"><span class="bdms_15" style="float:left;"><div class="star<%#Eval("TotalPoint")%>"></div></span> <span class="bdms_07">口味：<span><%#Eval("TastePoint")%></span>环境：<span><%#Eval("MilieuPoint")%></span>服务：<span><%#Eval("ServicePoint")%></span></span></td>
     </tr>
   <tr>
     <td colspan="2" style="padding:0 30px 0 50px;">
@@ -142,12 +142,12 @@
 <div class="shopcar_middle">
     <div id="order_list">
     </div>
-    <div class="shopcar_btn">
+    <div class="shopcar_btn" style=" overflow:hidden;">
         <div class="shopcar_tip">本店非特约，请自行电话订餐</div>
-        <div class="shopcar_tel"><%=item.Phone %></div>
+        <div class="shopcar_tel" style="height:70px;"><%=item.Phone %></div>
     </div>
 </div>
-<div class="shopcar_bottom"><img src="images/yncf_59.gif" width="122" height="22" onclick="carnext()" /></div>
+<div class="shopcar_bottom" style="height:48px; padding-top:6px;"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()" /></div>
 </div>
 </div>
 </div>

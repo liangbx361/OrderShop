@@ -43,11 +43,13 @@ namespace web
                 rpt_list.DataSource = list;
                 rpt_list.DataBind();
 
-                UserInfo uinfo = ubll.GetUserByID(list[0].UserID);
+                //UserInfo uinfo = ubll.GetUserByID(list[0].UserID);
+                UserInfo uinfo = Session["cudoUser"] as UserInfo;
+                UserAddress userAddress = Session["selectAddress"] as UserAddress;
                 L_Mobile.Text = uinfo.Mobile;
-                L_Name.Text = uinfo.NickName;
-                hiddenaid.Value = uinfo.Address.Split('|')[0].Split(',')[2];
-                L_Address.Text = uinfo.Address.Split('|')[1];
+                L_Name.Text = userAddress.UserName;
+                hiddenaid.Value = userAddress.Address.Split('|')[0].Split(',')[2];
+                L_Address.Text = userAddress.Address.Split('|')[1];
             }
         }
 

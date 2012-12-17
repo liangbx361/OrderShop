@@ -136,12 +136,12 @@
 <div class="shopcar_middle">
     <div id="order_list">
     </div>
-    <div class="shopcar_btn">
+    <div class="shopcar_btn" style=" overflow:hidden;">
         <div class="shopcar_tip">本店非特约，请自行电话订餐</div>
-        <div class="shopcar_tel"><%=item.Phone %></div>
+        <div class="shopcar_tel" style="height:70px;"><%=item.Phone %></div>
     </div>
 </div>
-<div class="shopcar_bottom"><img src="images/yncf_59.gif" width="122" height="22" onclick="carnext()" /></div>
+<div class="shopcar_bottom" style="height:48px; padding-top:6px;"><img src="images/btn_check_order.gif" width="141" height="32" onclick="carnext()" /></div>
 </div>
 </div>
 </div>

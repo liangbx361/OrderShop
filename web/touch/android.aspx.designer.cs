@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace web {
+namespace web.touch {
     
     
-    public partial class shoporderlist {
+    public partial class android {
         
         /// <summary>
         /// form1 控件。
@@ -22,48 +22,48 @@ namespace web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Header 控件。
+        /// txtname 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::web.Header Header;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtname;
         
         /// <summary>
-        /// hidden_shopid 控件。
+        /// txttel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidden_shopid;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txttel;
         
         /// <summary>
-        /// rpt_orderlist 控件。
+        /// txtfax 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_orderlist;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtfax;
         
         /// <summary>
-        /// WebPager 控件。
+        /// txtemail 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager WebPager;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
         
         /// <summary>
-        /// Footer 控件。
+        /// txtcopyright 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::web.Footer Footer;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtcopyright;
     }
 }
