@@ -202,5 +202,61 @@ namespace web.WebService
             OrderItemBLL bll = new OrderItemBLL();
             return bll.GetList(orderNo);
         }
+
+        /// <summary>
+        /// 意见反馈
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="subject"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string feedBack(string username, string subject, string content)
+        {
+            FeedBack item = new FeedBack();
+            item.UserName = username;
+            item.Subject = subject;
+            item.Content = content;
+
+            if (new FeedBackBLL().AddItem(item) > 0)
+            {
+                return "ok";
+            }
+            else
+            {
+                return "fail";
+            }
+        }
+
+        /// <summary>
+        /// 用户评论
+        /// </summary>
+        /// <param name="commentMessage"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string userComment(String commentMessage)
+        {
+            ShopComment item = new ShopComment();
+            ShopCommentBLL bll = new ShopCommentBLL();
+            JObject commentObject = JObject.Parse(commentMessage);
+
+            item.TotalPoint = Convert.ToInt32(commentObject["totalPoint"].ToString()); 
+            item.TastePoint = Convert.ToInt32(commentObject["tastePoint"].ToString());
+            item.MilieuPoint = Convert.ToInt32(commentObject["milieuPoint"].ToString());
+            item.ServicePoint = Convert.ToInt32(commentObject["servicePoint"].ToString());
+            item.CommentContent = commentObject["comment"].ToString().Replace("\"", "");
+            item.ShopId = Convert.ToInt32(commentObject["shopId"].ToString());
+            item.UserId = Convert.ToInt32(commentObject["userId"].ToString());
+            item.UserName = commentObject["userName"].ToString().Replace("\"", "");
+
+            if (bll.AddShopComment(item) > 0)
+            {
+                return "ok";
+            }
+            else
+            {
+                return "fail";
+            }
+        }
     }
 }
