@@ -553,6 +553,10 @@
       <DependentUpon>ShopList.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WebService\Update.asmx.cs">
+      <DependentUpon>Update.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebService\UserAccount.asmx.cs">
       <DependentUpon>UserAccount.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -2001,6 +2005,7 @@
     <Content Include="WebService\OrderCheck.asmx" />
     <Content Include="WebService\ShopInfo.asmx" />
     <Content Include="WebService\ShopList.asmx" />
+    <Content Include="WebService\Update.asmx" />
     <Content Include="WebService\UserAccount.asmx" />
     <Content Include="WebService\UserAddressInfo.asmx" />
     <Content Include="XmlConfig\urls.config" />
@@ -2026,6 +2031,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="client\" />
     <Folder Include="obj\Debug\Refactor\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="upload\link\" />

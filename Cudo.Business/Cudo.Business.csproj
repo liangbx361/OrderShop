@@ -82,6 +82,7 @@
     <Compile Include="ShopsBLL.cs" />
     <Compile Include="ShopTypeBLL.cs" />
     <Compile Include="SystemLogBLL.cs" />
+    <Compile Include="UpdateBLL.cs" />
     <Compile Include="UserAddressBLL.cs" />
     <Compile Include="UserGroupBLL.cs" />
     <Compile Include="UserProfitBLL.cs" />

@@ -62,13 +62,14 @@ namespace web
                 strResult.Append("<ul class=\"cdlist2\">");
                 foreach (Product pitem in list)
                 {
+                    int newPrice = (int)(pitem.Price * 1000 - pitem.Price * item.zk*10);
                     strResult.Append("<li>");
                     strResult.Append("<span class=\"sl\">" + pitem.ProductName + "</span>");
                     strResult.Append("<span class=\"sr\">");
                     //strResult.Append("<img src=\"/images/yj_tu.gif\"/>");
                     strResult.Append("<S class=\"price\">￥" + pitem.Price + "</S>");
                     //strResult.Append("<img src=\"/images/hy_tu.gif\"/>");
-                    strResult.Append("<span class=\"price2\" color=#ffff>￥" + (pitem.Price - (pitem.Price * item.zk / 100)) + "</span>");
+                    strResult.Append("<span class=\"price2\" color=#ffff>￥" + (float)newPrice / 1000 + "</span>");
                     strResult.Append("<a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span>");
                     strResult.Append("</li>");
                 }

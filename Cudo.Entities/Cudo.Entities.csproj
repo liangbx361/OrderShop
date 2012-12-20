@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
     <Compile Include="Advertising.cs" />
+    <Compile Include="AndroidVersionInfo.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Cooperation.cs" />

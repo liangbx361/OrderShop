@@ -154,7 +154,7 @@ namespace web
             switch (sortstr)
             {
                 case "time": dv.Sort = "id desc"; break;
-                case "hit": dv.Sort = "hit desc"; break;
+                case "hit": dv.Sort = "addtime desc"; break;
                 case "point": dv.Sort = "sumpoint desc"; break;
                 default: dv.Sort = "hit desc"; break;
             }
