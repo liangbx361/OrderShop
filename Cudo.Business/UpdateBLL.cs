@@ -14,5 +14,10 @@ namespace Cudo.Business
         {
             return UpdateDAL.getAndroidVersion();
         }
+
+        public int UpdateAndroidVersion(AndroidVersionInfo versionInfo)
+        {
+            return UpdateDAL.UpdateAndroidVersion(versionInfo);
+        }
     }
 }

@@ -35,23 +35,29 @@
                 <tr>
                     <td style="width: 10%;height:30px; text-align:right;">版本号：</td>
                     <td>
-                        <input type="text" id="txttel" runat="server" class="inpu" />
+                        <input type="text" id="txtVersionCode" runat="server" class="inpu" />
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 10%;height:30px; text-align:right;">版本名称：</td>
                     <td>
-                        <input type="text" id="txtfax" runat="server" class="inpu" />
+                        <input type="text" id="txtVersionName" runat="server" class="inpu" />
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 10%;height:30px; text-align:right;">下载地址：</td>
                     <td >
-                       <input type="text" id="txtemail" runat="server" size="30" class="inpu" /></td>
+                       <input type="text" id="txtDownloadAddr" runat="server" size="30" class="inpu" /></td>
                 </tr>
                 <tr>
                     <td style="width:10%;height:30px;text-align:right;">更新说明：</td>
-                    <td><textarea name="txtcopyright" id="txtcopyright" rows="8" cols="80" class="text" runat="server"></textarea></td>
+                    <td><textarea name="txtcopyright" id="txtIntroduction" rows="8" cols="80" class="text" runat="server"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;height:30px; text-align:right;"></td>
+                    <td>
+                        <asp:Button ID="btnsubmit" runat="server" CssClass="btn" onclick="btnsubmit_Click" />
+                    </td>
                 </tr>            
             </table>
     </td>

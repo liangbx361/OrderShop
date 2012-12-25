@@ -31,39 +31,48 @@ namespace web.touch {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtname;
         
         /// <summary>
-        /// txttel 控件。
+        /// txtVersionCode 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txttel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtVersionCode;
         
         /// <summary>
-        /// txtfax 控件。
+        /// txtVersionName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtfax;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtVersionName;
         
         /// <summary>
-        /// txtemail 控件。
+        /// txtDownloadAddr 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDownloadAddr;
         
         /// <summary>
-        /// txtcopyright 控件。
+        /// txtIntroduction 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtcopyright;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtIntroduction;
+        
+        /// <summary>
+        /// btnsubmit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsubmit;
     }
 }

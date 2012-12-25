@@ -49,10 +49,12 @@ namespace web
         {
             UserInfo user = Session["cudoUser"] as UserInfo;
             UserAddressBLL bll = new UserAddressBLL();
-            List<UserAddress> list = bll.GetList(user.Id);
+            List<UserAddress> list = bll.GetList(user.Id);         
             List<string> addressList = new List<string>();
+            int i=0;
             foreach(UserAddress u in list) {
                 addressList.Add(u.Address.Split('|')[1]);
+                if (i++ == 0) Session["selectAddress"] = u;
             }
 
             defaultIndex = addressList.IndexOf(abll.GetAreaName(aid)+ abll.GetAreaName(sid) + abll.GetAreaName(did));

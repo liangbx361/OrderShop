@@ -42,5 +42,19 @@ namespace Cudo.Services
 
             return versionInfo;
         }
+
+        public static int UpdateAndroidVersion(AndroidVersionInfo versionInfo)
+        {
+            string sql = "update [android_client_version] set name=@name, versioncode=@versioncode, versionname=@versionname, src=@src, introduction=@introduction where id=1";
+            SqlParameter[] paramvalues = new SqlParameter[] 
+            {
+                new SqlParameter("@name",versionInfo.Name),
+                new SqlParameter("@versioncode",versionInfo.VersionCode),
+                new SqlParameter("@versionname",versionInfo.VersionName),
+                new SqlParameter("@src",versionInfo.Src),
+                new SqlParameter("@introduction",versionInfo.Introduction),
+            };
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.Text, sql, paramvalues);
+        }
     }
 }

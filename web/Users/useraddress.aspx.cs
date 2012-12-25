@@ -105,6 +105,11 @@ namespace web.Users
                 UserAddress item = bll.GetAddressByID(Convert.ToInt32(e.CommandArgument));
                 item.IsDefault = 1;
                 bll.UpdateAddress(item);
+
+                //更新session里面的地址数据
+                UserInfo userInfo = Session["cudoUser"] as UserInfo;
+                userInfo.Address = item.Address;
+                Session["cudoUser"] = userInfo;
             }
             PageInit();
         }

@@ -28,6 +28,7 @@ namespace web
             else
             {
                 string[] addlist = item.Address.Split('|')[0].Split(',');
+                
                 try
                 {
                     int aid = Convert.ToInt32(addlist[0]);
