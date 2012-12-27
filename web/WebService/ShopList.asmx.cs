@@ -42,13 +42,22 @@ namespace web.WebService
         {
             ShopsBLL bll = new ShopsBLL();
             DataSet ds = null;
+            string orderStr = "";
+
+            switch (orderType)
+            {
+                case "time": orderStr = "id desc"; break;
+                case "hit": orderStr = "addtime desc"; break;
+                case "point": orderStr = "sumpoint desc"; break;
+                default: orderStr = "addtime desc"; break;
+            }
  
             if (did > 0)
                 ds = bll.GetListByDistrictId(did);  //根据楼宇搜索
             else if (sid > 0)
                 ds = bll.GetListByStreetId(sid);    //根据街道搜索
             else
-                ds = bll.GetListByAreaIdSort(aid, orderType); //搜索所有的数据
+                ds = bll.GetListByAreaIdSort(aid, orderStr); //搜索所有的数据
 
             foreach (DataTable dt in ds.Tables)
             {

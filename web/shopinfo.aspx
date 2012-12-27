@@ -110,11 +110,11 @@
 <tr>
 <td style="font-size:14px;font-weight:bold;border-bottom:1px solid #CCC;line-height:30px;" id="cd_<%#Eval("Id") %>">
     &nbsp;>&nbsp;<%#Eval("TypeName") %><% if (see_pic == 0)
-       {%><ul class="cdlist2" style="position:absolute; z-index:10; margin-top:-30px;">
+       {%><ul class="cdlist2" style="position:absolute; z-index:10; margin-top:-30px; _margin-top:-4px;">
 	    <li style="border-bottom:none;">
             <span class="sl"></span>
             <span class="sr"></span>
-		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px;"/>
+		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px; _margin-left:126px;"/>
 		    <S class="price"></S>
 		    <img src="/images/cfw_hyjtu.gif"/>
 		    <span class="price2" color=#ffff></span>		
@@ -122,7 +122,7 @@
         <li style="border-bottom:none;">
             <span class="sl"></span>
             <span class="sr"></span>
-		    <img src="/images/cfw_yjtu.gif"style="margin-left:196px;" />
+		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px; _margin-left:126px;" />
 		    <S class="price"></S>
 		    <img src="/images/cfw_hyjtu.gif"/>
 		    <span class="price2" color=#ffff></span>		

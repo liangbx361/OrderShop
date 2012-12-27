@@ -70,7 +70,7 @@ namespace web.WebService
             if (new OrdersBLL().AddItem(orderinfoitem) > 0)
             {
                 ModifyTGPoint(orderinfoitem.UserId, orderinfoitem.OrderPoint, orderinfoitem.AddTime);
-                //FastSendToShop(orderinfoitem.ShopId, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark, orderinfoitem.UserAddress, orderinfoitem.UserName, orderinfoitem.UserTel);
+                FastSendToShop(orderinfoitem.ShopId, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark, orderinfoitem.UserAddress, orderinfoitem.UserName, orderinfoitem.UserTel);
                 return "ok";
             }
             else return "false";

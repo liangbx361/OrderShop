@@ -76,7 +76,7 @@ namespace web
                         promotionid = Convert.ToInt32(promotion);
                 }
                 item.PromotionId = promotionid;
-                item.TotalPoint = 20;
+                item.TotalPoint = 8888;
                 int UserID = bll.AddUser(item);
                 if (UserID > 0)
                 {

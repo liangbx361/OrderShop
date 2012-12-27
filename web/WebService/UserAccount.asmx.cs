@@ -129,7 +129,7 @@ namespace web.WebService
             item.Address = ",,||2";
             item.Utype = 0;
             item.ShopId = 0;
-            item.TotalPoint = 20;
+            item.TotalPoint = 8888;
             item.PromotionId = 0;
 
             if (bll.AddUser(item) > 0)
