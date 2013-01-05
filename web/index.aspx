@@ -5,7 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>无标题文档</title>
+	<meta name="description" content="邀您吃饭（107饭网），福州最大最全网络折扣送餐平台，一家最大力度让利给消费者的一个网络订餐平台，一个让你边吃饭边省钱又边省时间，打造最具特色的美食网站，只要你想网络点餐订餐就能想起我们107饭网。" />
+<meta name="keywords" content="订餐网,福州网上订餐，福州网络订餐,福州网络送餐,福州订餐,福州点餐，福州外卖网,福州送外卖的网站,福州网络订餐网站,107饭,107fan,福州美食网" />
+
+    <title>107饭网-福州订餐_福州网上订餐_福州网络订餐_福州网上送餐网|邀您吃饭网-福州最大网络折扣订餐平台</title>
     <script type="text/javascript" src="js/unitpngfix.js"></script>
     <!--ie6 支持png透明 js-->
     <link style="text/css" rel="stylesheet" href="css/fansy.css" />
@@ -31,11 +34,11 @@
 
         //107吃饭首页 立刻订餐 按钮切换
         function fansy_lkdc_onm(fansy_lkdc_obj) {
-            fansy_lkdc_obj.src = "images/fansy_lnr_dcbutonc.gif";
+            fansy_lkdc_obj.src = "images/fansy_lnr_kk.gif";
         }
         function fansy_lkdc_out(fansy_lkdc_obj) {
-            fansy_lkdc_obj.src = "images/fansy_lnr_dcbut.gif";
-        }
+            fansy_lkdc_obj.src = "images/fansy_lnr_kk2.gif";
+        }    
 
     </script>
 </head>
@@ -58,7 +61,7 @@
                         <td height="80" align="center">  
                             
                             <asp:LinkButton ID="btnSubmit" runat="server" onclick="btnSubmit_Click">
-                                <img src="images/fansy_lnr_dcbut.gif" width="214" height="70" onmouseover="fansy_lkdc_onm(this)"
+                                <img src="images/fansy_lnr_kk.gif" width="214" height="70" onmouseover="fansy_lkdc_onm(this)"
                                     onmouseout="fansy_lkdc_out(this)" style="cursor: pointer;" />
                             </asp:LinkButton>
                             
@@ -72,17 +75,19 @@
                     var widths = 647;
                     var heights = 526;
                     //设置下页数              
-                    var counts = 4;
+                    var counts = 5;
                     //添加页数 修改连接
-                    img1 = new Image(); img1.src = 'images/fansy_rnr_tu1.jpg';
-                    img2 = new Image(); img2.src = 'http://notebook.yesky.com/imagelist/2007/017/hub8x795v23m.jpg';
-                    img3 = new Image(); img3.src = 'http://www.yesky.com/imagelist/2007/017/dt741w2a2n42.jpg';
-                    img4 = new Image(); img4.src = 'http://www.yesky.com/imagelist/2007/016/hda926w5t574.jpg';
-                    url1 = new Image(); url1.src = 'http://www.baidu.com';
-                    url2 = new Image(); url2.src = 'http://www.baidu.com';
-                    url3 = new Image(); url3.src = 'http://www.baidu.com';
-                    url4 = new Image(); url4.src = 'http://www.baidu.com';
+                    img1 = new Image(); img1.src = 'images/sd1.jpg';
+                    img2 = new Image(); img2.src = 'images/meiwei.jpg';
+                    img3 = new Image(); img3.src = 'images/meiwei2.jpg';
+                    img4 = new Image(); img4.src = 'images/meiwei3.jpg';
+                    img5 = new Image(); img5.src = 'images/meiwei4.jpg';
 
+                    url1 = new Image(); url1.src = 'http://url.cn/5oH5Hb';
+                    url2 = new Image(); url2.src = 'http://www.107fan.com/BrowseShop.aspx';
+                    url3 = new Image(); url3.src = 'http://www.107fan.com/BrowseShop.aspx';
+                    url4 = new Image(); url4.src = 'http://www.107fan.com/BrowseShop.aspx';
+                    url5 = new Image(); url5.src = 'http://www.107fan.com/BrowseShop.aspx';
 
                     var nn = 1;
                     var key = 0;
@@ -91,7 +96,7 @@
                         else if (document.all)
                         { document.getElementById("pic").filters[0].Apply(); document.getElementById("pic").filters[0].Play(duration = 2); }
                         eval('document.getElementById("pic").src=img' + nn + '.src');
-                        eval('document.getElementById("url").href=url' + nn + '.src');
+                       eval('document.getElementById("url").href=url' + nn + '.src');
                         for (var i = 1; i <= counts; i++) { document.getElementById("xxjdjj" + i).className = 'axx'; }
                         document.getElementById("xxjdjj" + nn).className = 'bxx';
                         nn++; if (nn > counts) { nn = 1; }                        
@@ -130,7 +135,8 @@
                         <a href="/help.aspx?id=10">常见问题</a>
                     </td>
                     <td width="647" align="center">
-                        Copyright &copy; 邀您吃饭. All Rights Reserved. 闽ICP备12013601号
+                        Copyright &copy; 邀您吃饭. All Rights Reserved. 闽ICP备12013601号<script src="http://s25.cnzz.com/stat.php?id=4589327&web_id=4589327" language="JavaScript">统计</script>
+
                     </td>
                 </tr>
             </table>

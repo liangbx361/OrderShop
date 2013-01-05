@@ -38,7 +38,7 @@
   </div>
     <div class="fansy_baner">
         <div class="fansy_baner_lxx">
-            最新消息：<a href="###">107饭网全新改版，欢迎体验！</a></div>
+            最新消息：<a href="/client/fan107.apk">107饭网安卓客户端上线，欢迎下载体验！</a></div>
         <div class="fansy_baner_rxx">
             &nbsp;&nbsp;
             <%if (Session["cudoUser"] == null)
