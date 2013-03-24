@@ -82,12 +82,12 @@ namespace web
                         oitem.Price = caritem.Price;
                         new OrderItemBLL().AddItem(oitem);
                     }
-                    zkSum = (decSum * list[0].zk / 100); //积分
+                    zkSum = (decSum * list[0].zk); //积分
                     orderinfoitem.OrderNo = orderno;
                     orderinfoitem.ShopId = list[0].ShopID;
                     orderinfoitem.UserId = list[0].UserID;
-                    orderinfoitem.OrderPoint = zkSum;
-                    orderinfoitem.TotalPrice = decSum - zkSum;
+                    orderinfoitem.OrderPoint = zkSum; //定单获取的积分
+                    orderinfoitem.TotalPrice = decSum; //消费的金额;
                     orderinfoitem.UserTel = L_Mobile.Text;
                     orderinfoitem.UserName = L_Name.Text;
                     orderinfoitem.UserAddress = L_Address.Text + txtAddress.Value;
@@ -98,8 +98,9 @@ namespace web
                     {
                         ModifyTGPoint(list[0].UserID, zkSum, orderinfoitem.AddTime);
                         Session["ShoppingCart"] = null;
-                        FastSendToShop(list[0].ShopID, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark);
-                        FastSendToUser(L_Mobile.Text, orderinfoitem.TotalPrice.ToString(), str.ToString());
+                        //测试 短信发送暂时关闭
+                        //FastSendToShop(list[0].ShopID, orderinfoitem.TotalPrice.ToString(), str.ToString(), orderinfoitem.Remark);
+                        //FastSendToUser(L_Mobile.Text, orderinfoitem.TotalPrice.ToString(), str.ToString());
                         Response.Redirect("/Users/");
                     }
                     else

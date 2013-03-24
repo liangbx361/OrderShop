@@ -35,9 +35,10 @@
         <td width="79%">
 <div id="me1">
 <ul>
-<li id="mee0" class="me3" onclick="mee(0)">账户余额</li>
-<li id="mee1" class="me2" onclick="javascript:self.location='onlinerecharge.aspx'">在线充值</li>
-<li id="mee2" class="me2" onclick="javascript:self.location='rechargeorders.aspx'">充值订单</li>
+<li id="mee0" class="me3" onclick="mee(0)">积分账户</li>
+<li id="mee1" class="me2" onclick="javascript:self.location='fetchpoint.aspx'">收取积分</li>
+<li id="mee2" class="me2" onclick="javascript:self.location='pointdetail.aspx'">积分明细</li>
+<li id="mee3" class="me2" onclick="javascript:self.location='pointspread.aspx'">我的推广积分</li>
 </ul>
 </div>
 </td>
@@ -46,20 +47,18 @@
     </table>
 <!--内容-->
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px" id="mse0">
-        <tr>
-          <td height="30" bgcolor="#f3f3f3" style="border-top:1px solid #dedee0;font-size:14px;font-weight:bold;padding-left:20px">积分明细</td>
-        </tr>
-        <tr>
+    <tr>
           <td>
-          <%UserInfo item = Session["cudoUser"] as UserInfo;%>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sem1">
   <tr>
-    <td width="24%" height="35" style="color:#0353ce;padding-left:20px">可用积分</td>
-    <td width="76%" style="color:#666666;">已消费积分</td>
+    <td width="33%" height="35" bgcolor="#f3f3f3" style="color:#0353ce;padding-left:20px">总积分</td>
+    <td width="33%" bgcolor="#f3f3f3" style="color:#666666;padding-left:20px">当前积分</td>
+    <td width="33%" bgcolor="#f3f3f3" style="color:#666666;padding-left:20px">提现积分</td>
   </tr>
   <tr>
-    <td height="35" style="color:#b91616;padding-left:20px"><%=item.CurrentPoint %></td>
-    <td style="color:#b91616"><%=item.UsePoint %></td>
+    <td width="33%" height="35" style="color:#b91616;padding-left:20px"><%=item.TotalPoint %></td>
+    <td width="33%" style="color:#b91616;padding-left:20px"><%=item.CurrentPoint %></td>
+    <td width="33%" style="color:#b91616;padding-left:20px"><%=item.UsePoint %></td>
   </tr>
 </table>
         </td>

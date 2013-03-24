@@ -32,6 +32,30 @@ namespace Cudo.Business
         }
 
         /// <summary>
+        /// 获取可收取积分的订单
+        /// </summary>
+        /// <param name="pageindex"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public List<OrderInfo> GetListByPoint(int pageindex, int pagesize, int userid)
+        {
+            return OrdersDAL.GetListByPoint(pageindex, pagesize, userid);
+        }
+
+        /// <summary>
+        /// 获取积分明细
+        /// </summary>
+        /// <param name="pageindex"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public List<OrderInfo> GetListByStauts(int pageindex, int pagesize, int userid)
+        {
+            return OrdersDAL.GetListByStatus(pageindex, pagesize, userid);
+        }
+
+        /// <summary>
         /// 返回店铺的订单列表
         /// </summary>
         /// <param name="pageindex">当前页数</param>
@@ -108,6 +132,26 @@ namespace Cudo.Business
         public int GetCountByUserId(int userid)
         {
             return OrdersDAL.GetCountByUserId(userid);
+        }
+
+        /// <summary>
+        /// 获取已获取积分的订单数量
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <returns></returns>
+        public int GetCountByStatus(int userid)
+        {
+            return OrdersDAL.GetCountByStatus(userid);
+        }
+
+        /// <summary>
+        /// 获取未获取积分的订单数量
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <returns></returns>
+        public int GetCountByPoint(int userid)
+        {
+            return OrdersDAL.GetCountByPoint(userid);
         }
 
         public int GetCountByShopId(int shopid)

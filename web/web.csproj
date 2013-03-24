@@ -441,6 +441,8 @@
     <Content Include="images\pic.gif" />
     <Content Include="images\star.gif" />
     <Content Include="images\star.png" />
+    <Content Include="images\tqjf_but.gif" />
+    <Content Include="images\tqjf_but2.gif" />
     <Content Include="index.aspx" />
     <Content Include="js\fansy.js" />
     <Content Include="js\jquery.js" />
@@ -678,6 +680,9 @@
     <Content Include="upload\images\2012122316283578.jpg" />
     <Content Include="upload\images\2012122318060264.jpg" />
     <Content Include="upload\images\2012122318484354.jpg" />
+    <Content Include="Users\fetchpoint.aspx" />
+    <Content Include="Users\pointdetail.aspx" />
+    <Content Include="Users\pointspread.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -713,6 +718,27 @@
     </Compile>
     <Compile Include="touch\android.aspx.designer.cs">
       <DependentUpon>android.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\fetchpoint.aspx.cs">
+      <DependentUpon>fetchpoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\fetchpoint.aspx.designer.cs">
+      <DependentUpon>fetchpoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\pointdetail.aspx.cs">
+      <DependentUpon>pointdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\pointdetail.aspx.designer.cs">
+      <DependentUpon>pointdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\pointspread.aspx.cs">
+      <DependentUpon>pointspread.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\pointspread.aspx.designer.cs">
+      <DependentUpon>pointspread.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

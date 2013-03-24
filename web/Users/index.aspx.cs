@@ -30,5 +30,37 @@ namespace web.Users
         {
             return new ShopsBLL().GetShopNameById(Convert.ToInt32(shopid));
         }
+
+        protected int getOrderPoint(object orderPoint)
+        {
+            return Convert.ToInt32(orderPoint);
+        }
+
+        /**
+         * 判断是否能提取积分
+         * 交易状态显示为已完成,则可提示积分
+         */
+        protected string isAbleGetPoint(object orderNo)
+        {
+            string result = "";
+
+            OrderInfo orderItem = new OrdersBLL().GetItem(Convert.ToString(orderNo));
+            TimeSpan timeSub = DateTime.Now - orderItem.AddTime;
+
+            if (orderItem.OrderStatus == 2)
+            {
+                result = "积分可提取";
+            }
+            else if (timeSub.Days >= 1)
+            {
+                result = "积分可提取";
+            }
+            else
+            {
+                result = "积分不可提取";
+            }
+
+            return result;
+        }
     }
 }

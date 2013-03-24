@@ -24,7 +24,7 @@ namespace Cudo.Entities
         public decimal TotalPrice { get; set; }
 
         /// <summary>
-        /// 消费的积分
+        /// 消费的积分 用户获得的积分
         /// </summary>
         public decimal OrderPoint { get; set; }
 
@@ -59,7 +59,7 @@ namespace Cudo.Entities
         public string Remark { get; set; }
 
         /// <summary>
-        /// 订单状态（0未处理，1处理中，2已完成，3作废）
+        /// 订单状态（0未处理，1处理中，2已完成，3作废, 4订单完成，且积分已提取）
         /// </summary>
         public int OrderStatus { get; set; }
 

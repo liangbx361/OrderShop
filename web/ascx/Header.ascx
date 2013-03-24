@@ -29,7 +29,7 @@
                 <td width="20" align="center"><img src="/images/star.png" width="16" height="16"  style="margin-top:-2px;"/></td>
                 <td width="60"><a href="javascript:;" onclick="window.external.AddFavorite('http://www.107fan.com','邀您吃饭网')">加入收藏</a></td>
                 <td width="20" align="center"><img src="/images/coins.png" width="16" height="16"  style="margin-top:-2px;"/></td>
-                <td width="60"><a href="/Users/onlinerecharge.aspx">积分充值</a></td>
+                <td width="60"><a href="/Users/onlinerecharge.aspx">积分查看</a></td>
               </tr>
             </table>
         </td>

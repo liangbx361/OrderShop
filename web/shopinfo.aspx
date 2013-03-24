@@ -114,17 +114,25 @@
 	    <li style="border-bottom:none;">
             <span class="sl"></span>
             <span class="sr"></span>
+            <!-- 
 		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px; _margin-left:126px;"/>
-		    <S class="price"></S>
+		    -->
+            <S class="price"></S>
+            <!-- 
 		    <img src="/images/cfw_hyjtu.gif"/>
+            -->
 		    <span class="price2" color=#ffff></span>		
 	    </li>
         <li style="border-bottom:none;">
             <span class="sl"></span>
             <span class="sr"></span>
+            <!-- 
 		    <img src="/images/cfw_yjtu.gif" style="margin-left:196px; _margin-left:126px;" />
+            -->
 		    <S class="price"></S>
-		    <img src="/images/cfw_hyjtu.gif"/>
+		    <!-- 
+            <img src="/images/cfw_hyjtu.gif"/>
+            -->
 		    <span class="price2" color=#ffff></span>		
 	    </li>
     </ul> 

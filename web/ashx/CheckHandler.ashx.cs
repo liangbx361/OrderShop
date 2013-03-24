@@ -90,11 +90,13 @@ namespace web.ashx
                 }
                 else
                 {
-                    UserInfo item = context.Session["cudoUser"] as UserInfo;
-                    if (item.CurrentPoint < usepoint)
-                        strResult = "{\"types\":\"0\",\"msg\":\"您的积分不足!请先充值或者直接电话联系商家\"}";
-                    else
-                        strResult = "{\"types\":\"1\",\"msg\":\"\"}";
+                    strResult = "{\"types\":\"1\",\"msg\":\"\"}";
+
+                    //UserInfo item = context.Session["cudoUser"] as UserInfo;
+                    //if (item.CurrentPoint < usepoint)
+                    //    strResult = "{\"types\":\"0\",\"msg\":\"您的积分不足!请先充值或者直接电话联系商家\"}";
+                    //else
+                    //    strResult = "{\"types\":\"1\",\"msg\":\"\"}";
                 }
             }
             else

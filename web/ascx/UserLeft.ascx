@@ -8,8 +8,7 @@
 <div id="dh00">
 <ul>
 <li id="dh01"><a href="myorderlist.aspx">订单管理</a></li>
-<li id="dh02"><a href="accountmanagement.aspx">账户管理</a></li>
-<li id="dh03"><a href="myuserlist.aspx">收益管理</a></li>
+<li id="dh02"><a href="accountmanagement.aspx">积分管理</a></li>
 <li id="dh04"><a href="myfavoritelist.aspx">服务应用管理</a></li>
 <li id="dh05"><a href="userinfo.aspx">个人信息管理</a></li>
 </ul>

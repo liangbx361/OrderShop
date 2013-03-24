@@ -66,10 +66,8 @@ namespace web
                     strResult.Append("<li>");
                     strResult.Append("<span class=\"sl\">" + pitem.ProductName + "</span>");
                     strResult.Append("<span class=\"sr\">");
-                    //strResult.Append("<img src=\"/images/yj_tu.gif\"/>");
-                    strResult.Append("<S class=\"price\">￥" + pitem.Price + "</S>");
-                    //strResult.Append("<img src=\"/images/hy_tu.gif\"/>");
-                    strResult.Append("<span class=\"price2\" color=#ffff>￥" + (float)newPrice / 1000 + "</span>");
+                    strResult.Append("<span class=\"price\">￥" + pitem.Price + "</span>");
+                    //strResult.Append("<span class=\"price2\" color=#ffff>￥" + (float)newPrice / 1000 + "</span>");
                     strResult.Append("<a href=\"javascript:;\" onclick=\"AddShoppingCar(" + pitem.Id + ")\">要一份</a></span>");
                     strResult.Append("</li>");
                 }

@@ -77,11 +77,11 @@ namespace web.ashx
                         strResult += "  <div class=\"u3\"><a href=\"javascript:;\" class=\"btnReduce\" onclick=\"minusitem(this)\"></a> <input type=\"text\" class=\"amount\" id=\"num_"+item.ProductID+"\" value=\""+item.BuyNum+"\" /> <a href=\"javascript:;\" class=\"btnAdd\" onclick=\"additem(this)\"></a> </div>";
                         strResult += "</div>";
                     }
-                    zkSum = (decSum * list[0].zk / 100); //积分 
+                    zkSum = (decSum * list[0].zk ); //积分 
                     strResult += "</div>";
                     strResult += "<div class=\"shopcar_price\">";
-                    strResult += "  <div style=\"float:right;\">积分价：<span>" + (decSum - zkSum) + "</span>元</div>";
-                    strResult += "  <div>原价：<span>" + decSum + "</span>元</div>";
+                    strResult += "  <div style=\"float:right;\">获得积分：<span>" + (int)zkSum + "</span>分</div>";
+                    strResult += "  <div>金额：<span>" + decSum + "</span>元</div>";
                     strResult += "</div>";
                     strResult += "<div class=\"shopcar_count\"><input type='hidden' id='usepoint' value='" + zkSum + "'>(共<span>" + cartCount + "</span>份)</div>";
                     context.Session["ShoppingCart"] = list;

@@ -10,7 +10,7 @@
 namespace web.Users {
     
     
-    public partial class index {
+    public partial class pointspread {
         
         /// <summary>
         /// form1 控件。
@@ -47,6 +47,15 @@ namespace web.Users {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rpt_list;
+        
+        /// <summary>
+        /// WebPager 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::Wuqi.Webdiyer.AspNetPager WebPager;
         
         /// <summary>
         /// Footer 控件。

@@ -55,7 +55,6 @@
               <td width="20%" align="center"><strong>餐厅名称</strong></td>
               <td width="25%" align="center"><strong>订单时间</strong></td>
               <td width="15%" align="center"><strong>订单金额</strong></td>
-              <td width="10%" align="center"><strong>消费积分</strong></td>
               <td width="10%" align="center"><strong>操作</strong></td>
             </tr>
           </table></td>
@@ -69,7 +68,6 @@
               <td width="20%" align="center"><a href="/shopinfo.aspx?shopid=<%#Eval("ShopId") %>"><%#GetShopName(Eval("ShopId"))%></a></td>
               <td width="25%" align="center"><%#Eval("AddTime")%></td>
               <td width="15%" align="center"><%#Eval("TotalPrice")%>元</td>
-              <td width="10%" align="center"><%#Eval("OrderPoint")%></td>
               <td width="10%" align="center"><a href="createcomment.aspx?shopid=<%#Eval("ShopId") %>" style="color:#1d54a5">评论</a></td>
             </tr>
             </ItemTemplate></asp:Repeater>

@@ -49,6 +49,50 @@ namespace Cudo.Services
             return list;
         }
 
+        /// <summary>
+        /// 读取订单列表
+        /// </summary>
+        /// <param name="dataReader"></param>
+        /// <returns></returns>
+        private static List<OrderInfo> getOrderList(SqlDataReader dataReader)
+        {
+            List<OrderInfo> list = new List<OrderInfo>();
+            try
+            {
+                while (dataReader.Read())
+                {
+                    OrderInfo item = new OrderInfo();
+                    item.Id = Convert.ToInt32(dataReader["id"]);
+                    item.OrderNo = dataReader["orderno"].ToString();
+                    item.ShopId = Convert.ToInt32(dataReader["shopid"]);
+                    item.ShopName = dataReader["shopname"].ToString();
+                    item.TotalPrice = Convert.ToDecimal(dataReader["totalprice"]);
+                    item.OrderPoint = Convert.ToDecimal(dataReader["orderpoint"]);
+                    item.UserId = Convert.ToInt32(dataReader["userid"]);
+                    item.UserName = dataReader["username"].ToString();
+                    item.UserTel = dataReader["usertel"].ToString();
+                    item.UserAddress = dataReader["useraddress"].ToString();
+                    item.AreaId = Convert.ToInt32(dataReader["aid"]);
+                    item.Remark = dataReader["remark"].ToString();
+                    item.OrderStatus = Convert.ToInt32(dataReader["orderstatus"]);
+                    item.PayStatus = Convert.ToInt32(dataReader["paystatus"]);
+                    item.AddTime = Convert.ToDateTime(dataReader["addtime"]);
+                    list.Add(item);
+                }
+            }
+            catch
+            {
+                dataReader.Close();
+                dataReader.Dispose();
+            }
+            finally
+            {
+                dataReader.Close();
+                dataReader.Dispose();
+            }
+            return list;
+        }
+
         public static List<OrderInfo> GetList(int pageindex,int pagesize)
         {
             string spName = "cudo_getorderlist";
@@ -64,6 +108,46 @@ namespace Cudo.Services
         {
             List<OrderInfo> list = new List<OrderInfo>();
             string spName = "cudo_getorderlistbyuid";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@pageindex",pageindex),
+                new SqlParameter("@pagesize",pagesize),
+                new SqlParameter("@userid",userid)
+            };
+            return GetList(spName, paramvalues);
+        }
+
+        /// <summary>
+        /// 获取可收取积分的订单
+        /// </summary>
+        /// <param name="pageindex"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public static List<OrderInfo> GetListByPoint(int pageindex, int pagesize, int userid)
+        {
+            List<OrderInfo> list = new List<OrderInfo>();
+            string spName = "cudo_getorderbypoint";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@pageindex",pageindex),
+                new SqlParameter("@pagesize",pagesize),
+                new SqlParameter("@userid",userid)
+            };
+            return GetList(spName, paramvalues);
+        }
+
+        /// <summary>
+        /// 获取积分明细
+        /// </summary>
+        /// <param name="pageindex"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public static List<OrderInfo> GetListByStatus(int pageindex, int pagesize, int userid)
+        {
+            List<OrderInfo> list = new List<OrderInfo>();
+            string spName = "cudo_getorderbystatus";
             SqlParameter[] paramvalues = new SqlParameter[]
             {
                 new SqlParameter("@pageindex",pageindex),
@@ -249,6 +333,36 @@ namespace Cudo.Services
                 new SqlParameter("@userid",userid)
             };
             return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName,paramvalues));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <returns></returns>
+        public static int GetCountByStatus(int userid)
+        {
+            string spName = "cudo_getordercountbyuidstatus";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@userid",userid)
+            };
+            return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <returns></returns>
+        public static int GetCountByPoint(int userid)
+        {
+            string spName = "getordercountbyuidpoint";
+            SqlParameter[] paramvalues = new SqlParameter[]
+            {
+                new SqlParameter("@userid",userid)
+            };
+            return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, spName, paramvalues));
         }
 
         public static int GetCountByShopId(int shopid)
